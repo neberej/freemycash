@@ -7,6 +7,9 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   font-family: 'Inter', sans-serif;
   background-color: #fff;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
   .container-inner {
     display: flex;
     gap: 1rem;
@@ -14,6 +17,8 @@
     flex-wrap: wrap;
   }
 }
+
+
 
 .logo-bill {
   background-image: url("../assets/logo.png");

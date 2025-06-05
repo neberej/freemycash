@@ -22,7 +22,7 @@ const Header: React.FC = () => {
         <Link className="tab" to="/edit-data">{messages.editData.title}</Link>
       </nav>}
       <div className="header-actions">
-        <Link className="button" to="/settings">
+        <Link className={`button ${!data && 'disabled'}`} to="/settings">
           <FiSettings />
           <span className="visually-hidden">{messages.settings.title}</span>
         </Link>

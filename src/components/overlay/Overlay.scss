@@ -1,57 +1,83 @@
-
 @use '@src/styles/variables' as *;
 @use '@src/styles/mixins' as *;
-@use 'sass:color';
-@use 'sass:math';
 
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 9999;
-  width: 100vw;
-  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  h2 {
-    margin-bottom: 0.5rem;
-  }
-  .button {
-    margin-top: 20px;
-    background-color: $primary !important;
-    color: #fff !important;
-  }
 }
 
 .overlay-content {
   position: relative;
   background: $surface;
-  padding: 2rem;
+  padding: 2rem 2rem 1.5rem;
   border-radius: 1rem;
   max-width: 600px;
   width: 100%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  margin-top: 20px;
-  .button.close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none !important;
-    color: #000 !important;
-    box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
     color: $text-muted;
-    font-size: 2rem;
+  }
+
+  .actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .button {
+    color: #fff;
+    padding: 0.5rem 1rem;
     border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
     cursor: pointer;
-    line-height: 1;
-    padding: 0.25rem;
-    transition: color 0.2s;
-    &:hover {
-      color: $text-secondary;
+    margin-top: 20px;
+    background-color: $primary !important;
+    color: #fff !important;
+    max-width: 200px;
+    &.close {
+      position: absolute;
+      top: 0rem;
+      right: 1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: transparent !important;
+      border: 2px solid $text-muted;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: all 0.2s ease;
+
+      svg {
+        stroke: $text-muted;
+        transition: stroke 0.2s ease;
+      }
+
+      &:hover {
+        
+      }
     }
   }
 }
+
+
