@@ -9,12 +9,13 @@ A backend-optional, privacy-friendly, single-file based finance tracker.
 
 ### How it works
 
-i) Create/Upload a financial file
+i) Create or Upload a financial file
 
-ii) Upload, Organize on this tool (either freemycash.com or self-host)
+ii) Edit, Organize your data on this tool (either freemycash.com or self-host)
 
 iii) Download the updated file and take it with you.
 
+Optional: Integrate with backend using versioned json db (e.g. lowdb). Provided in /backend folder.
 
 ### Installation
 
