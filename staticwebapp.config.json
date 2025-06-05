@@ -1,0 +1,18 @@
+{
+  "routes": [
+    {
+      "route": "/app/*",
+      "serve": "/app.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/404.html",
+    "exclude": ["/assets/*", "/favicon.ico", "/robots.txt"]
+  }
+}
