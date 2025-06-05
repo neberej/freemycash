@@ -1,0 +1,88 @@
+
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use '@src/styles/elements' as *;
+@use 'sass:color';
+@use 'sass:math';
+
+.expenses {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: $text;
+  background-color: #fff;
+  .pie-chart {
+    max-width: 300px;
+  }
+  .dropdown {
+    width: 100%;
+    max-width: 240px;
+    padding: 0.6rem 0.75rem;
+    font-size: 1rem;
+    background-color: $surfaceAlt;
+    color: $text;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    transition: box-shadow 0.2s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px $primary;
+    }
+  }
+
+  .card {
+    background-color: $surface;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .category-group {
+    margin-bottom: 2rem;
+
+    .transaction-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background-color: $surfaceAlt;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      transition: transform 0.2s;
+
+      &:hover {
+        
+      }
+
+      span {
+        flex: 1;
+        color: $text;
+        font-size: 0.95rem;
+
+        &:nth-child(1) {
+          flex: 1.2;
+        }
+        &:nth-child(2) {
+          flex: 2;
+        }
+        &:nth-child(3) {
+          flex: 1;
+          text-align: right;
+          font-weight: 600;
+          color: $text-primary;
+        }
+      }
+    }
+
+    .category-total {
+      text-align: right;
+      margin-top: 0.75rem;
+      font-weight: bold;
+      font-size: 1rem;
+      color: $text-primary;
+    }
+  }
+}

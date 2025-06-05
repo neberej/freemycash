@@ -1,0 +1,15 @@
+
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use '@src/styles/elements' as *;
+@use 'sass:color';
+@use 'sass:math';
+
+.add-data {
+  @include flex-center(column);
+  padding: $spacing-unit * 4;
+
+  .button {
+    margin: $spacing-unit;
+  }
+}

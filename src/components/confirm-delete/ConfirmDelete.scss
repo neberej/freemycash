@@ -1,0 +1,26 @@
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use 'sass:color';
+
+.confirm-delete {
+
+  p {
+    margin-bottom: 1.5rem;
+    color: $text;
+  }
+
+  .confirm-delete-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+
+    .confirm-delete-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}

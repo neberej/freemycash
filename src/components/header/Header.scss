@@ -1,0 +1,127 @@
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  font-family: sans-serif;
+  user-select: none;
+
+  h1 {
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: #212121;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: left;
+    margin-left: 20px;
+    .tab {
+      text-decoration: none;
+      font-weight: 500;
+      color: rgb(38, 38, 38);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+      font-size: 13px;
+      line-height: 19.5px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 1rem; // aligns with padding
+        bottom: 0.4rem; // just under the text
+        width: calc(100% - 2rem); // match text width
+        height: 2px;
+        background-color: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+      &:hover::after,
+      &:focus::after {
+        transform: scaleX(1);
+      }
+      &.active::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    a,
+    button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: transparent;
+      border: none;
+      color: #616161;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        stroke-width: 2;
+        stroke: currentColor;
+        fill: none;
+        transition: stroke 0.3s;
+      }
+
+      &:hover,
+      &:focus {
+        color: #1976d2;
+        background-color: #e3f2fd;
+        box-shadow: 0 2px 8px rgb(25 118 210 / 0.3);
+        outline: none;
+
+        svg {
+          stroke: #1976d2;
+        }
+      }
+    }
+  }
+}
+
+
+/* Responsive tweak */
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    nav {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.75rem 0;
+      width: 100%;
+
+      .tab {
+        flex-grow: 1;
+        text-align: center;
+      }
+    }
+
+    .header-actions {
+      width: 100%;
+      justify-content: flex-start;
+    }
+  }
+}

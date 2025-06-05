@@ -1,0 +1,28 @@
+
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'sass:color';
+@use 'sass:math';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $text-primary;
+  background-color: $background-color;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-unit * 2;
+}
+
+h1 { font-size: $font-size-large * 1.5; }
+h2 { font-size: $font-size-large; }
+h3 { font-size: $font-size-base; }

@@ -1,0 +1,10 @@
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use '@src/styles/elements' as *;
+@use 'sass:color';
+
+.create-new-file {
+  .form-option {
+   flex-basis: 100%;
+  }
+}

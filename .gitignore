@@ -1,0 +1,12 @@
+
+.git
+.env
+.DS_Store
+.cache
+npm-debug.log
+public
+node_modules
+build
+dist
+coverage
+.DS_Store

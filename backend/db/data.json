@@ -1,0 +1,12 @@
+
+{
+  "transactions": [],
+  "saveInBrowser": false,
+  "prefixDownload": false,
+  "currency": "$",
+  "categories": [],
+  "externalApi": {
+    "read": "",
+    "write": ""
+  }
+}

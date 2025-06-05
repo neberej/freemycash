@@ -1,0 +1,121 @@
+{
+  "header": {
+    "title": "FreeMyCash",
+    "upload": "Upload",
+    "addTransaction": "Add Transaction",
+    "download": "Download",
+    "clear": "Clear"
+  },
+  "WelcomeScreen": {
+    "title": "Welcome!",
+    "message": "Please upload a JSON file or create a new one to start.",
+    "upload": "Upload File",
+    "createNew": "Create New"
+  },
+  "createNewFile": {
+    "title": "Create New Financial File",
+    "create": "Create File",
+    "success": "New financial file created successfully"
+  },
+  "uploadDialog": {
+    "title": "Unsaved Changes",
+    "message": "There are unsaved changes. Do you want to proceed with uploading a new file?",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
+  "clearDialog": {
+    "title": "Clear All Data",
+    "message": "Are you sure you want to clear all data? This action cannot be undone.",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
+  "settings": {
+    "title": "Settings",
+    "saveInBrowser": "Save in Browser",
+    "saveInBrowserTooltip": "Warning: Anyone with access to this browser will be able to access your data.",
+    "prefixTooltip": "When you download your data, the filename will have date on it.",
+    "prefixDate": "Prefix filename with date",
+    "categories": "Categories",
+    "savedWithStorageCleared": "Settings saved and local storage cleared"
+  },
+  "overview": {
+    "title": "Overview",
+    "headline": "At a glance",
+    "mtdExpenses": "MTD Expenses",
+    "mtdIncome": "MTD Income",
+    "mtdBalance": "MTD Balance",
+    "ytdExpenses": "YTD Expenses",
+    "ytdIncome": "YTD Income",
+    "ytdBalance": "YTD Balance",
+    "noData": "No data to display",
+    "savings": "Savings"
+  },
+  "expenses": {
+    "title": "Expenses",
+    "noData": "No data to display",
+    "allMonths": "All"
+  },
+  "income": {
+    "title": "Income",
+    "noData": "No data to display",
+    "allMonths": "All"
+  },
+  "transactions": {
+    "title": "Transactions",
+    "income": "Income",
+    "expenses": "Expenses",
+    "edit": "Add/Edit transactions",
+    "add": "add",
+    "noData": "No data to display",
+    "addExpense": "Add Expense",
+    "addIncome": "Add Income",
+    "deleteConfirmTitle": "Confirm Deletion?",
+    "deleteConfirmMessage": "This cannot be undone.",
+    "types": {
+      "income": "Income",
+      "expense": "Expense"
+    },
+    "headers": {
+      "type": "Type",
+      "date": "Date",
+      "category": "Category",
+      "merchant": "Merchant",
+      "amount": "Amount",
+      "actions": "Actions"
+    }
+  },
+  "addTransaction": {
+    "merchantPlaceholder": "Merchant",
+    "amountPlaceholder": "Amount"
+  },
+  "editData": {
+    "title": "Edit Raw Data"
+  },
+  "categories": [
+    "Rent",
+    "Food",
+    "Clothing",
+    "Utilities",
+    "Salary",
+    "Other"
+  ],
+  "buttons": {
+    "add": "Add",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "close": "Close"
+  },
+  "errors": {
+    "invalidData": "Invalid data format. Please ensure the JSON is valid and contains correct fields (e.g., valid dates, positive amounts).",
+    "invalidFileType": "Please upload a valid JSON file.",
+    "fileTooLarge": "File is too large (max 5MB).",
+    "storageLimit": "Local storage limit reached. Please download your data and clear storage.",
+    "dataConflict": "Data has been modified elsewhere. Please reload and try again.",
+    "invalidAmount": "invalidAmount",
+    "invalidCategories": "Please provide at least one valid category",
+    "createFileFailed": "Failed to create new file",
+    "saveFailed": "saveFailed"
+  }
+}

@@ -1,0 +1,48 @@
+
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use 'sass:color';
+@use 'sass:math';
+
+.notification {
+  position: fixed;
+  left: 50%;
+  bottom: 3rem;
+  transform: translateX(-50%) translateY(20px);
+  background-color: $surface;
+  color: $text;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  font-weight: 600;
+  font-size: 1rem;
+  min-width: 280px;
+  max-width: 90vw;
+  text-align: center;
+  z-index: 1000;
+
+  opacity: 0;
+  animation: slideFadeIn 0.4s ease forwards;
+
+  &-success {
+    background-color: #e6f4ea;
+    color: #276749; // dark green
+  }
+
+  &-error {
+    background-color: #fee2e2;
+    color: #b91c1c; // dark red
+  }
+
+  &-info {
+    background-color: #e0f2fe;
+    color: #0369a1; // dark blue
+  }
+}
+
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

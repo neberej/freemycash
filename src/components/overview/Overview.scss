@@ -1,0 +1,51 @@
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use 'sass:color';
+@use 'sass:math';
+
+.overview {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: $text-primary;
+
+  .overview-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .overview-category {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Explicitly set to 3 columns
+    gap: 1.5rem;
+  }
+
+  .overview-card {
+    background-color: $surface;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    p {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: $primary;
+      margin: 0;
+    }
+
+    h4 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      color: $text-primary;
+    }
+  }
+}

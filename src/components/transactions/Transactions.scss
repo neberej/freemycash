@@ -1,0 +1,118 @@
+
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use '@src/styles/elements' as *;
+@use 'sass:color';
+@use 'sass:math';
+
+
+.transactions {
+  padding: 2rem;
+  background: $surface;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: $text-primary;
+  }
+
+  .transaction-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    .button {
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
+      background-color: $primary;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: color.adjust($primary, $lightness: -5%);
+      }
+    }
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $background-color;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    max-height: 80vh; // Adjust as needed
+  overflow-y: auto;
+    th, td {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    thead {
+      background-color: $surface;
+
+      th {
+        color: $text-muted;
+        font-weight: 600;
+        border-bottom: 1px solid rgba($border, 0.2);
+      }
+    }
+
+    tbody {
+      tr {
+        transition: background 0.15s ease;
+
+        &:nth-child(even) {
+          background-color: rgba($surface, 0.3);
+        }
+
+        &:hover {
+          background-color: rgba($primary, 0.06);
+        }
+
+        td {
+          color: $text-primary;
+
+          &:last-child {
+            display: flex;
+            gap: 0.5rem;
+
+            .button {
+              padding: 0.35rem 0.75rem;
+              font-size: 0.85rem;
+              background-color: $surface;
+              border: 1px solid rgba($border, 0.2);
+              border-radius: 5px;
+              color: $text-primary;
+              transition: background-color 0.2s;
+
+              &:hover {
+                background-color: rgba($primary, 0.1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .transaction-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}

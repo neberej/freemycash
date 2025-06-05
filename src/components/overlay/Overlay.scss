@@ -1,0 +1,57 @@
+
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use 'sass:color';
+@use 'sass:math';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+  .button {
+    margin-top: 20px;
+    background-color: $primary !important;
+    color: #fff !important;
+  }
+}
+
+.overlay-content {
+  position: relative;
+  background: $surface;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  margin-top: 20px;
+  .button.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none !important;
+    color: #000 !important;
+    box-shadow: none;
+    color: $text-muted;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.25rem;
+    transition: color 0.2s;
+    &:hover {
+      color: $text-secondary;
+    }
+  }
+}

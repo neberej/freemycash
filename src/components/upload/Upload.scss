@@ -1,0 +1,14 @@
+
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use 'sass:color';
+@use 'sass:math';
+
+.upload {
+  @include flex-center(column);
+  padding: $spacing-unit * 6;
+
+  .button {
+    margin: $spacing-unit;
+  }
+}

@@ -1,0 +1,30 @@
+
+
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use 'sass:color';
+@use 'sass:math';
+
+.tabs {
+  @include flex-center;
+  gap: $spacing-unit;
+  margin-bottom: $spacing-unit * 2;
+
+  .tab {
+    padding: $spacing-unit $spacing-unit * 2;
+    text-decoration: none;
+    color: $text-secondary;
+    font-weight: $font-weight-medium;
+    border-bottom: 2px solid transparent;
+    transition: $transition;
+
+    &.active {
+      color: $primary-color;
+      border-bottom-color: $primary-color;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
