@@ -20,6 +20,9 @@ jobs:
           submodules: true
           lfs: false
 
+      - name: Debug: Confirm workflow started
+        run: echo "✅ Workflow started correctly"
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
