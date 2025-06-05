@@ -14,3 +14,14 @@
     flex-wrap: wrap;
   }
 }
+
+.logo-bill {
+  background-image: url("../assets/logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+  width: 150px;
+  height: 47px;
+}

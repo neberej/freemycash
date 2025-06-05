@@ -126,7 +126,7 @@ body, html {
     }
   }
   .image-section {
-        background-image: url('/public/images/hero.jpg');
+        background-image: url('src/assets/hero.jpg');
     background-size: cover;
     background-position: left;
   }
@@ -216,7 +216,7 @@ body, html {
   border-bottom: 1px solid $border;
   padding: 1rem 2rem;
   &__logo {
-    background-image: url("/public/logo.png");
+    background-image: url("/src/assets/logo.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: inline-block;

@@ -40,6 +40,7 @@ const config: Configuration = {
             options: {
               sassOptions: {
                 quietDeps: true,
+                includePaths: [path.resolve(__dirname, 'src')],
               },
             },
           },
