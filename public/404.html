@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>404 - Page Not Found | FreeMyCash.com</title>
+    <meta name="description" content="Track your income, expenses, and cash flow with a privacy-first financial tracker. Fully modular and self-hostable. You own your data." />
+    <meta name="keywords" content="finance tracker, budget app, expense tracker, income tracker, cash flow, personal finance, privacy-first, open source, financial data" />
+    <meta name="author" content="Free My Cash" />
+    <meta name="theme-color" content="#14b8a6" />
+
+    <meta property="og:title" content="Free My Cash — Privacy-First Personal Finance Tracker" />
+    <meta property="og:description" content="Take control of your financial data. Track, manage, and explore your transactions while keeping your privacy intact." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Free My Cash — Privacy-First Personal Finance Tracker" />
+    <meta name="twitter:description" content="Self-hostable finance tracker for income, expenses, and budgeting. 100% user-owned data." />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(150, 150, 150, 0.1);
+      pointer-events: none;
+    }
+
+    #center-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+    }
+
+    #text {
+      font-size: 1.5rem;
+      color: rgb(34, 32, 29);
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    #back-button {
+      background: radial-gradient(circle at center, #fff7e6, #ffe680);
+      border: none;
+      border-radius: 5%;
+      width: 140px;
+      height: 40px;
+      padding: 10px 10px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 0 10px 2px rgba(255, 230, 128, 0.8);
+      transition: all 0.3s ease;
+      box-shadow: 0 15px 15px -11px rgba(0,0,0, 0.4);
+      background: #222;
+    }
+
+    #back-button:hover {
+      box-shadow: 0 0 20px 4px rgba(255, 230, 100, 0.9);
+      transform: scale(1.1) rotate(2deg);
+    }
+  </style>
+</head>
+<body>
+  <div id="center-content">
+    <div id="text">Ooops! The page you are looking for doesn't exist.</div>
+    <button id="back-button" onclick="location.href='https://www.freemycash.com';">BACK TO HOME</button>
+  </div>
+
+  <script>
+    const shapes = [];
+
+    for (let i = 0; i < 8; i++) {
+      const div = document.createElement('div');
+      const size = Math.random() * 100 + 60;
+      div.className = 'circle';
+      div.style.width = size + 'px';
+      div.style.height = size + 'px';
+      div.style.left = Math.random() * (window.innerWidth - size) + 'px';
+      div.style.top = Math.random() * (window.innerHeight - size) + 'px';
+      div.style.background = `rgba(${120 + Math.random() * 80}, ${120 + Math.random() * 80}, ${120 + Math.random() * 80}, 0.1)`;
+      document.body.appendChild(div);
+
+      shapes.push({
+        el: div,
+        x: parseFloat(div.style.left),
+        y: parseFloat(div.style.top),
+        dx: (Math.random() - 0.5) * 0.2,
+        dy: (Math.random() - 0.5) * 0.2
+      });
+    }
+
+    function animate() {
+      shapes.forEach(s => {
+        s.x += s.dx;
+        s.y += s.dy;
+
+        if (s.x < 0 || s.x > window.innerWidth - s.el.offsetWidth) s.dx *= -1;
+        if (s.y < 0 || s.y > window.innerHeight - s.el.offsetHeight) s.dy *= -1;
+
+        s.el.style.left = s.x + 'px';
+        s.el.style.top = s.y + 'px';
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
