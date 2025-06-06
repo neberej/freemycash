@@ -1,16 +1,14 @@
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { useStore } from '@src/store/useStore';
 import { useLocalStorageSync } from '@src/hooks/localStorageHook';
+import { useDemoLoader } from '@src/hooks/demoHook';
 import { Header, WelcomeScreen, CreateNewFile, Upload, Overview, Visualize, Expenses, Income, Transactions, Settings, EditData, Footer } from '@src/components';
 import ProtectedRoutes from '@src/common/ProtectedRoutes';
-import { getQuery } from '@src/utils/query'
 
 import './App.scss';
 
-// Routes for users with data
 const PrivateRoutes: React.FC = () => {
   const location = useLocation();
   return (
@@ -39,7 +37,6 @@ const PrivateRoutes: React.FC = () => {
   );
 };
 
-// Routes for unauthenticated users
 const PublicRoutes: React.FC = () => (
   <Routes>
     <Route path="/" element={<WelcomeScreen />} />
@@ -51,30 +48,14 @@ const PublicRoutes: React.FC = () => (
 );
 
 const App: React.FC = () => {
-  const { data, setData, isDemo, setIsDemo } = useStore();
-  const [isLoaded, setIsLoaded] = useState(false);
+  const { data } = useStore();
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  const { isDemoReady } = useDemoLoader();
 
   useLocalStorageSync(setIsLoaded);
 
-  useEffect(() => {
-    const demoFromURL = getQuery('demo') === 'true';
-    if (demoFromURL) setIsDemo(true);
-  }, []);
+  if (!isLoaded || !isDemoReady) return null;
 
-  // Load demo.json if query is ?demo and no data exists
-  useEffect(() => {
-    if (isDemo && !data) {
-      fetch('finance-demo.json')
-        .then((res) => {
-          if (!res.ok) throw new Error('Failed to load demo data');
-          return res.json();
-        })
-        .then((json) => setData(json))
-        .catch((err) => console.error('Demo load error:', err));
-    }
-  }, [isDemo, data, setData]);
-
-  if (!isLoaded) return null;
   const hasData = !!data;
 
   return (

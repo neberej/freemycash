@@ -43,7 +43,7 @@ const WelcomeScreen: React.FC = () => {
     };
     reader.readAsText(file);
   };
-
+  
   return (
     <div className="welcome-screen">
       <h2>{messages.WelcomeScreen.title}</h2>

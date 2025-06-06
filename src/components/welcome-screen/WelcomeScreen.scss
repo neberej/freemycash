@@ -29,9 +29,15 @@
   .demo-link {
     margin-top: 20px;
     display: block;
+    font-size: 13px;
+    border: 0;
+    font-weight: bold;
+    background: 0;
     a {
       text-decoration: underline;
       color: teal;
+      font-weight: bold;
+      letter-spacing: 0.07em;
     }
   }
 }
