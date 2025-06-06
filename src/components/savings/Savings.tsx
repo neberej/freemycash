@@ -21,9 +21,8 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 const noData = () => {
   return (
-    <div className="savings">
-      <h3 className="text-align-left">{messages.overview.savings}</h3>
-      {messages.overview.noData}
+    <div className="no-data">
+      <p>{messages.expenses.noData}</p>
     </div>
   );
 };
@@ -103,10 +102,19 @@ const Savings: React.FC = () => {
       
                 tooltipEl.innerHTML = `
                   <div class="tooltip-title">${label}</div>
-                  <div class='tooltip-item tooltip-income'>Income: ${formatCurrency(income, data.currency)}</div>
-                  <div class='tooltip-item tooltip-expenses'>Expenses: ${formatCurrency(expenses, data.currency)}</div>
+                  <div class='tooltip-item tooltip-income'>
+                    <span>Income:</span>
+                    <span>${formatCurrency(income, data.currency)}</span>
+                  </div>
+                  <div class='tooltip-item tooltip-expenses'>
+                    <span>Expenses:</span>
+                    <span>${formatCurrency(expenses, data.currency)}</span>
+                  </div>
                   <div class="savings-separator"></div>
-                  <div class='tooltip-item tooltip-savings'>Savings: ${formatCurrency(saving, data.currency)}</div>
+                  <div class='tooltip-item tooltip-savings'>
+                    <span>Savings:</span>
+                    <span>${formatCurrency(saving, data.currency)}</span>
+                  </div>
                 `;
 
                 const { offsetLeft: posX, offsetTop: posY } = chart.canvas;

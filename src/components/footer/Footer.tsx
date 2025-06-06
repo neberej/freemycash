@@ -4,7 +4,7 @@ import './Footer.scss';
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      (C) Freemycash
+      &copy; FreeMyCash.com 2025
     </footer>
   );
 };

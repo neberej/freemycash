@@ -8,15 +8,23 @@
   margin: 0 auto;
   padding: 2rem;
   color: $text-primary;
+  h3 {
+    font-size: 1.2em;
+    letter-spacing: 0.02em;
+  }
   .overview-card {
     background: #ffffff;
     border-radius: 12px;
     padding: 24px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    box-shadow: 0.1px 0.1px 0.1px 0.1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-width: 200px;
+    @media (max-width: 600px) {
+      min-width: 150px;
+    }
 
     .label {
       font-size: 14px;
@@ -30,7 +38,7 @@
     }
 
     .amount {
-      font-size: 32px;
+      font-size: 24px;
       font-weight: 600;
       color: #111;
       display: inline-flex;
@@ -68,6 +76,13 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); // Explicitly set to 3 columns
     gap: 1.5rem;
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: dense; 
+    }
+    @media (max-width: 400px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 

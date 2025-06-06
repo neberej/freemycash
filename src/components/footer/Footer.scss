@@ -1,11 +1,13 @@
 .footer {
   width: 100%;
   padding: 1rem 2rem;
-  font-family: sans-serif;
-  color: #555;
+  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-top: 0.2px solid #ddd;
   text-align: center;
   user-select: none;
+  font-size: 11px;
+  line-height: 16px;
+  color: #616161;
 
   .footer-love {
     color: #e25555;
