@@ -1,3 +1,4 @@
+// @src/utils/savings.ts
 import { Transaction } from '@src/types';
 
 // Interface for monthly savings data
@@ -14,92 +15,83 @@ interface SavingsResult {
   savings: number[];
 }
 
-/**
- * Groups transactions by month and year, calculating income, expenses, and savings.
- * @param transactions - Array of financial transactions
- * @param currency - Currency symbol for formatting
- * @returns Object containing sorted labels and savings amounts
- * @throws Error if transactions contain invalid dates or amounts
- */
+// Groups transactions by month and year, calculating income, expenses, and savings.
 export const calculateMonthlySavings = (
   transactions: Transaction[],
   currency: string
-): SavingsResult => {
-  // Input validation
-  if (!Array.isArray(transactions)) {
-    throw new TypeError('Transactions must be an array');
-  }
+): {
+  labels: string[];
+  savings: number[];
+  monthlyData: Record<string, { income: number; expenses: number }>;
+} => {
+  const monthlyMap = new Map<string, { date: Date; income: number; expenses: number }>();
 
-  // Early return for empty transactions
-  if (transactions.length === 0) {
-    return { labels: [], savings: [] };
-  }
-
-  // Use Map for O(1) lookup and to maintain insertion order
-  const savingsMap = new Map<string, { income: number; expenses: number }>();
-
-  // Aggregate transactions by month-year
   transactions.forEach((transaction) => {
-    // Validate transaction
-    if (!transaction.date || isNaN(transaction.amount)) {
-      throw new Error(`Invalid transaction: ${JSON.stringify(transaction)}`);
-    }
-
     const date = new Date(transaction.date);
-    if (isNaN(date.getTime())) {
-      throw new Error(`Invalid date in transaction: ${transaction.date}`);
-    }
+    const month = date.getUTCMonth();
+    const year = date.getUTCFullYear();
+    const key = `${year}-${month}`;
 
-    // Use UTC for consistent month-year grouping
-    const monthYear = date.toLocaleDateString('en-US', {
-      month: 'short',
-      year: 'numeric',
-      timeZone: 'UTC',
-    });
+    const current = monthlyMap.get(key) || {
+      date: new Date(Date.UTC(year, month, 1)),
+      income: 0,
+      expenses: 0,
+    };
 
-    const current = savingsMap.get(monthYear) || { income: 0, expenses: 0 };
-    
-    if (transaction.type === 'income') {
-      current.income += transaction.amount;
-    } else if (transaction.type === 'expense') {
-      current.expenses += transaction.amount;
-    } else {
-      throw new Error(`Invalid transaction type: ${transaction.type}`);
-    }
+    if (transaction.type === 'income') current.income += transaction.amount;
+    else if (transaction.type === 'expense') current.expenses += transaction.amount;
 
-    savingsMap.set(monthYear, current);
+    monthlyMap.set(key, current);
   });
 
-  // Convert Map to array and sort by date
-  const monthlySavings: MonthlySavings[] = Array.from(savingsMap.entries())
-    .map(([monthYear, { income, expenses }]) => ({
-      monthYear,
-      income,
-      expenses,
-      savings: income - expenses,
-    }))
-    .sort((a, b) => {
-      const dateA = new Date(`${a.monthYear} 1, 2025 UTC`);
-      const dateB = new Date(`${b.monthYear} 1, 2025 UTC`);
-      return dateA.getTime() - dateB.getTime();
-    });
+  const sorted = Array.from(monthlyMap.values()).sort((a, b) => a.date.getTime() - b.date.getTime());
 
-  // Extract labels and savings for chart
-  const labels = monthlySavings.map((entry) => entry.monthYear);
-  const savings = monthlySavings.map((entry) => entry.savings);
+  const labels: string[] = [];
+  const savings: number[] = [];
+  const monthlyData: Record<string, { income: number; expenses: number }> = {};
 
-  return { labels, savings };
+  sorted.forEach(({ date, income, expenses }) => {
+    const monthYear = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+    labels.push(monthYear);
+    savings.push(income - expenses);
+    monthlyData[monthYear] = { income, expenses };
+  });
+
+  return { labels, savings, monthlyData };
 };
 
-/**
- * Formats a number as currency
- * @param amount - Number to format
- * @param currency - Currency symbol
- * @returns Formatted currency string
- */
+// Simple linear regression estimate for next savings value
+export const estimateSavings = (savings: number[]): number => {
+  const n = savings.length;
+  if (n < 2) return savings[n - 1] || 0;
+
+  const xMean = (n - 1) / 2;
+  const yMean = savings.reduce((sum, val) => sum + val, 0) / n;
+
+  let numerator = 0;
+  let denominator = 0;
+
+  for (let i = 0; i < n; i++) {
+    numerator += (i - xMean) * (savings[i] - yMean);
+    denominator += (i - xMean) ** 2;
+  }
+
+  const slope = numerator / denominator;
+  const intercept = yMean - slope * xMean;
+
+  return slope * n + intercept;
+};
+
+// Formats a number as currency
 export const formatCurrency = (amount: number, currency: string): string => {
   if (!isFinite(amount)) {
     throw new Error('Amount must be a valid number');
   }
   return `${currency}${amount.toFixed(2)}`;
+};
+
+export const formatCurrencyShort = (amount: number, currency: string): string => {
+  if (!isFinite(amount)) throw new Error('Amount must be a valid number');
+  const isNegative = amount < 0;
+  return `${isNegative ? '-' : ''}${currency}${Math.abs(amount).toFixed(2)}`;
 };

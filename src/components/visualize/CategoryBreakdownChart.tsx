@@ -142,7 +142,7 @@ const CategoryBreakdownChart: React.FC<Props> = ({
   }
 
   return (
-    <div className="chart-wrapper">
+    <div className="chart-wrapper category-chart">
       <h3 className="chart-heading">Spending by Category</h3>
       {allCategories.length > 0 && (
         <>
@@ -166,25 +166,25 @@ const CategoryBreakdownChart: React.FC<Props> = ({
               ))}
             </select>
           </div>
-          <div className="legend-container">
-            <div className="legend-label">Click to exclude:</div>
-            <div className="legend-items">
-              {allCategories.map((cat) => (
-                <button
-                  key={cat}
-                  className={`legend-btn ${excludedCategories.includes(cat) ? 'excluded' : ''}`}
-                  onClick={() => onCategoryClick?.(cat)}
-                  disabled={disableInteraction}
-                >
-                  {excludedCategories.includes(cat) ? <s>{cat}</s> : cat}
-                </button>
-              ))}
-            </div>
-          </div>
         </>
       )}
       <div className="chart-container">
         <Bar data={chartData} options={options} />
+      </div>
+      <div className="legend-container">
+        <span className="legend-label">Click to exclude:</span>
+        <div className="legend-items">
+          {allCategories.map((cat) => (
+            <button
+              key={cat}
+              className={`legend-btn ${excludedCategories.includes(cat) ? 'excluded' : ''}`}
+              onClick={() => onCategoryClick?.(cat)}
+              disabled={disableInteraction}
+            >
+              {excludedCategories.includes(cat) ? <s>{cat}</s> : cat}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

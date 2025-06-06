@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { useStore } from '@src/store/useStore';
 import { useLocalStorageSync } from '@src/hooks/localStorageHook';
-import { Header, WelcomeScreen, CreateNewFile, Upload, Overview, Visualize, Expenses, Income, Transactions, Settings, EditData, } from '@src/components';
+import { Header, WelcomeScreen, CreateNewFile, Upload, Overview, Visualize, Expenses, Income, Transactions, Settings, EditData, Footer } from '@src/components';
 import ProtectedRoutes from '@src/common/ProtectedRoutes';
 
 import './App.scss';
@@ -65,6 +65,7 @@ const App: React.FC = () => {
         <main className={hasData ? 'main-content' : 'landing-content'}>
           {hasData ? <PrivateRoutes /> : <PublicRoutes />}
         </main>
+        <Footer />
       </div>
     </Router>
   );

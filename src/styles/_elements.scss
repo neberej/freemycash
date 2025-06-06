@@ -62,6 +62,7 @@
 
 .dropdown, .select {
   appearance: none;
+  display: inline-block;
   padding: $spacing-unit math.div($spacing-unit * 3, 1) $spacing-unit $spacing-unit;
   font-size: $font-size-base;
   border: 1px solid $text-secondary;
