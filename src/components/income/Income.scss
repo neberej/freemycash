@@ -76,4 +76,23 @@
       color: $text-primary;
     }
   }
+  .category-jump-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .category-jump-link {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: capitalize;
+  }
+
+  .category-jump-link:hover {
+    background-color: #e0e0e0;
+  }
 }

@@ -28,7 +28,7 @@ const PrivateRoutes: React.FC = () => {
               <Route path="/transactions" element={<Transactions />} />
               <Route path="/visualize" element={<Visualize />} />
               <Route path="/settings" element={<Settings />} />
-              <Route path="/edit-data" element={<EditData />} />
+              <Route path="/data" element={<EditData />} />
             </Route>
             <Route path="*" element={<Navigate to="/overview" replace />} />
           </Routes>
