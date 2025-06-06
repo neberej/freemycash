@@ -126,7 +126,7 @@ body, html {
     }
   }
   .image-section {
-        background-image: url('src/assets/hero.jpg');
+        // background-image: url('../../../assets/hero.jpg');
     background-size: cover;
     background-position: left;
   }
@@ -245,7 +245,7 @@ body, html {
     color: $primary;
   }
 
-  .github-star {
+  &__github {
     border: 0;
   }
 

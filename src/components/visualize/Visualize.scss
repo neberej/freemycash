@@ -1,0 +1,95 @@
+:root {
+  --primary-main: #1e62d0;
+  --primary-light: #4e9af1;
+  --tooltip-bg: #1976d2;
+}
+
+.chart-wrapper {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chart-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.chart-container {
+  height: 100%;
+}
+
+
+
+.visualize.container {
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.dropdown {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  transition: border-color 0.2s ease;
+  &:focus {
+    border-color: #1976d2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(25, 118, 210, 0.5);
+  }
+}
+
+.no-data {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+.category-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.pill {
+  background: linear-gradient(135deg, #4e9af1, #1e62d0);
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  user-select: none;
+
+  &:hover {
+    background: linear-gradient(135deg, #6ca1f7, #3673e3);
+  }
+  &.excluded {
+    background: #ddd;
+    color: #999;
+    text-decoration: line-through;
+  }
+}
+
+.trend-select-wrapper {
+  margin: 2rem 0 1rem;
+  label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+  }
+}
+

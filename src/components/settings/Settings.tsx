@@ -10,6 +10,8 @@ import './Settings.scss';
 const Settings: React.FC = () => {
   const { data, setData } = useStore();
   const [categoriesInput, setCategoriesInput] = useState(data?.categories.join(', ') || '');
+  const [readApi, setReadApi] = useState(data?.externalApi?.read || '');
+  const [writeApi, setWriteApi] = useState(data?.externalApi?.write || '');
   const [notifications, setNotifications] = useState<NotificationType[]>([]);
 
   const addNotification = (message: string, type: NotificationType['type']) => {
@@ -28,6 +30,7 @@ const Settings: React.FC = () => {
     const updatedData = {
       ...data,
       categories: newCategories,
+      externalApi: {read: readApi, write: writeApi}
     };
 
     // Set updated data in DataContext
@@ -50,17 +53,38 @@ const Settings: React.FC = () => {
       <div className="container-inner">
         <div className="settings-option">
           <label>
+            {messages.settings.categories}
             <input
-              type="checkbox"
-              checked={data?.saveInBrowser || false}
-              onChange={(e) => {
-                if (data) {
-                  setData({ ...data, saveInBrowser: e.target.checked });
-                }
-              }}
+              className="input2"
+              type="text"
+              value={categoriesInput}
+              onChange={(e) => setCategoriesInput(e.target.value)}
+              placeholder="Comma-separated categories"
             />
-            {messages.settings.saveInBrowser}
-            <Tooltip tooltip={messages.settings.saveInBrowserTooltip} className="settings-tooltips" />
+          </label>
+        </div>
+        <div className="settings-option">
+          <label>
+            {messages.settings.backendGet}
+            <input
+              className="input2"
+              type="text"
+              value={readApi}
+              onChange={(e) => setReadApi(e.target.value)}
+              placeholder="/read"
+            />
+          </label>
+        </div>
+        <div className="settings-option">
+          <label>
+            {messages.settings.backendPost}
+            <input
+              className="input2"
+              type="text"
+              value={writeApi}
+              onChange={(e) => setWriteApi(e.target.value)}
+              placeholder="/write"
+            />
           </label>
         </div>
         <div className="settings-option">
@@ -78,16 +102,19 @@ const Settings: React.FC = () => {
             <Tooltip tooltip={messages.settings.prefixTooltip} className="settings-tooltips" />
           </label>
         </div>
-        <div className="settings-option">
+        <div className="settings-option warning">
           <label>
-            {messages.settings.categories}
             <input
-              className="input2"
-              type="text"
-              value={categoriesInput}
-              onChange={(e) => setCategoriesInput(e.target.value)}
-              placeholder="Comma-separated categories"
+              type="checkbox"
+              checked={data?.saveInBrowser || false}
+              onChange={(e) => {
+                if (data) {
+                  setData({ ...data, saveInBrowser: e.target.checked });
+                }
+              }}
             />
+            {messages.settings.saveInBrowser}
+            <Tooltip tooltip={messages.settings.saveInBrowserTooltip} className="settings-tooltips" />
           </label>
         </div>
         <button className="button2" onClick={handleSave}>{messages.buttons.save}</button>

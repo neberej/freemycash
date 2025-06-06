@@ -1,0 +1,57 @@
+.chart-wrapper {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chart-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+.dropdown {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.dropdown:hover:not(:disabled) {
+  background-color: #f0f0f0;
+  border-color: #1e62d0;
+}
+
+.dropdown:disabled {
+  background-color: #e5e5e5;
+  color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.chart-container {
+  height: 400px;
+  position: relative;
+}

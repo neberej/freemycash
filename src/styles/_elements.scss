@@ -102,7 +102,7 @@
   &:focus {
     outline: none;
     border-color: $primary-color;
-    box-shadow: 0 0 0 3px color.adjust($primary-color, $alpha: -0.8);
+    box-shadow: 0 0 0 1px color.adjust($primary-color, $alpha: -0.8);
   }
 
   &::placeholder {
@@ -152,7 +152,7 @@ input[type="file"] {
 
   &:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px color.adjust($primary, $alpha: -0.7);
+    box-shadow: 0 0 0 1px color.adjust($primary, $alpha: -0.7);
   }
 }
 

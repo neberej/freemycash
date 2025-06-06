@@ -134,3 +134,12 @@ export const formatDate = (dateStr: string): string => {
   }
   return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 };
+
+export const filterTransactionsByMonth = (transactions: Transaction[], month: string): Transaction[] => {
+  if (month === 'all') return transactions;
+  const [year, m] = month.split('-').map(Number);
+  return transactions.filter((t) => {
+    const date = new Date(t.date + 'T00:00:00Z');
+    return date.getUTCFullYear() === year && date.getUTCMonth() + 1 === m;
+  });
+};

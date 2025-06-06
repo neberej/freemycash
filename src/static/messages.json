@@ -35,7 +35,9 @@
     "saveInBrowserTooltip": "Warning: Anyone with access to this browser will be able to access your data.",
     "prefixTooltip": "When you download your data, the filename will have date on it.",
     "prefixDate": "Prefix filename with date",
-    "categories": "Categories",
+    "categories": "Categories for expenses",
+    "backendGet": "/GET api (to read data)",
+    "backendPost": "/POST api (to save data)",
     "savedWithStorageCleared": "Settings saved and local storage cleared"
   },
   "overview": {
@@ -54,6 +56,9 @@
     "title": "Expenses",
     "noData": "No data to display",
     "allMonths": "All"
+  },
+  "visualize": {
+    "title": "Visualize"
   },
   "income": {
     "title": "Income",
