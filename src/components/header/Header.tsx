@@ -8,11 +8,11 @@ import { FiSettings } from "react-icons/fi";
 import './Header.scss';
 
 interface HeaderProps {
-  isDemo: boolean;
+
 }
 
-const Header: React.FC<HeaderProps> = ({ isDemo }) => {
-  const { data, setData } = useStore();
+const Header: React.FC<HeaderProps> = () => {
+  const { data, isDemo } = useStore();
   return (
     <header className="header">
       <Link className="tab logo" to={data ? '/overview' : '/'}>

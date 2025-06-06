@@ -8,7 +8,7 @@ import { FiTrash2 } from 'react-icons/fi';
 import './ClearData.scss';
 
 const ClearData: React.FC = () => {
-  const { data, setData, setIsModified } = useStore();
+  const { data, setData, setIsModified, setIsDemo } = useStore();
   const [showClearDialog, setShowClearDialog] = useState(false);
   const [notifications, setNotifications] = useState<NotificationType[]>([]);
 
@@ -20,6 +20,7 @@ const ClearData: React.FC = () => {
     setData(null);
     localStorage.removeItem('financialData');
     setIsModified(false);
+    setIsDemo(false);
     setShowClearDialog(false);
     addNotification('Data cleared successfully', 'success');
   };

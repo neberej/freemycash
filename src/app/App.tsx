@@ -51,13 +51,15 @@ const PublicRoutes: React.FC = () => (
 );
 
 const App: React.FC = () => {
-  const { data, setData } = useStore();
+  const { data, setData, isDemo, setIsDemo } = useStore();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isDemo, setIsDemo] = useState(() => getQuery('demo') === 'true');
 
   useLocalStorageSync(setIsLoaded);
 
-
+  useEffect(() => {
+    const demoFromURL = getQuery('demo') === 'true';
+    if (demoFromURL) setIsDemo(true);
+  }, []);
 
   // Load demo.json if query is ?demo and no data exists
   useEffect(() => {
@@ -70,7 +72,7 @@ const App: React.FC = () => {
         .then((json) => setData(json))
         .catch((err) => console.error('Demo load error:', err));
     }
-  }, []);
+  }, [isDemo, data, setData]);
 
   if (!isLoaded) return null;
   const hasData = !!data;
@@ -78,7 +80,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="app">
-        <Header isDemo={isDemo} />
+        <Header />
         <main className={hasData ? 'main-content' : 'landing-content'}>
           {hasData ? <PrivateRoutes /> : <PublicRoutes />}
         </main>
