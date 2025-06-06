@@ -1,11 +1,12 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { useStore } from '@src/store/useStore';
 import { useLocalStorageSync } from '@src/hooks/localStorageHook';
 import { Header, WelcomeScreen, CreateNewFile, Upload, Overview, Visualize, Expenses, Income, Transactions, Settings, EditData, Footer } from '@src/components';
 import ProtectedRoutes from '@src/common/ProtectedRoutes';
+import { getQuery } from '@src/utils/query'
 
 import './App.scss';
 
@@ -50,10 +51,26 @@ const PublicRoutes: React.FC = () => (
 );
 
 const App: React.FC = () => {
-  const { data } = useStore();
+  const { data, setData } = useStore();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isDemo, setIsDemo] = useState(() => getQuery('demo') === 'true');
 
   useLocalStorageSync(setIsLoaded);
+
+
+
+  // Load demo.json if query is ?demo and no data exists
+  useEffect(() => {
+    if (isDemo && !data) {
+      fetch('finance-demo.json')
+        .then((res) => {
+          if (!res.ok) throw new Error('Failed to load demo data');
+          return res.json();
+        })
+        .then((json) => setData(json))
+        .catch((err) => console.error('Demo load error:', err));
+    }
+  }, []);
 
   if (!isLoaded) return null;
   const hasData = !!data;
@@ -61,7 +78,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="app">
-        <Header />
+        <Header isDemo={isDemo} />
         <main className={hasData ? 'main-content' : 'landing-content'}>
           {hasData ? <PrivateRoutes /> : <PublicRoutes />}
         </main>

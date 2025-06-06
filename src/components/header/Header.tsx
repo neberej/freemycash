@@ -7,12 +7,16 @@ import { useStore } from '@src/store/useStore';
 import { FiSettings } from "react-icons/fi";
 import './Header.scss';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  isDemo: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ isDemo }) => {
   const { data, setData } = useStore();
   return (
     <header className="header">
       <Link className="tab logo" to={data ? '/overview' : '/'}>
-        <span className="logo-bill"></span>
+        <span className={`logo-bill ${isDemo && 'demo'}`}></span>
       </Link>
       {data && <nav>
         <Link className="tab" to="/overview">{messages.overview.title}</Link>

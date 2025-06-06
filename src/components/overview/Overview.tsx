@@ -10,10 +10,10 @@ import './Overview.scss';
 const createAmountBlock = (currency: string, amount: number) => {
   const { whole, decimal } = formatCurrencyParts(currency, amount);
   return (
-    <p className="amount">
+    <span className="amount">
       {whole}
       <span className="decimal">{decimal}</span>
-    </p>
+    </span>
   )
 }
 

@@ -17,7 +17,7 @@ export const useStore = create<State>((set, get) => ({
   data: null,
   isModified: false,
   setData: (data) => {
-    console.log("saving data..", data)
+    //console.log("saving data..", data)
     set({ data });
     if (data?.saveInBrowser) saveToLocalStorage(data);
   },

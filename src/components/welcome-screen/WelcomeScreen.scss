@@ -26,4 +26,12 @@
   @include responsive(mobile) {
     padding: $spacing-unit * 2;
   }
+  .demo-link {
+    margin-top: 20px;
+    display: block;
+    a {
+      text-decoration: underline;
+      color: teal;
+    }
+  }
 }
