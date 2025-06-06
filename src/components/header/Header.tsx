@@ -19,6 +19,7 @@ const Header: React.FC = () => {
         <Link className="tab" to="/expenses">{messages.expenses.title}</Link>
         <Link className="tab" to="/income">{messages.income.title}</Link>
         <Link className="tab" to="/transactions">{messages.transactions.title}</Link>
+        <Link className="tab" to="/visualize">{messages.visualize.title}</Link>
         <Link className="tab" to="/edit-data">{messages.editData.title}</Link>
       </nav>}
       <div className="header-actions">

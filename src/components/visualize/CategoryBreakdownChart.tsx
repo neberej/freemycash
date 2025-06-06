@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo, useRef } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { ExpenseGroup } from '@src/types';
 import { formatCurrency } from '@src/utils/savings';
@@ -42,21 +42,29 @@ const CategoryBreakdownChart: React.FC<Props> = ({
   disableInteraction = false,
   excludedCategories = [],
 }) => {
-  const allCategories = Array.from(
-    new Set(data.map((d) => d.category).concat(excludedCategories))
-  ).sort();
+  const prevLabelsLength = useRef<number>(0);
 
-  // Filter categories to exclude those in excludedCategories
-  const filteredCategories = allCategories.filter(
-    (cat) => !excludedCategories.includes(cat)
-  );
+  const allCategories = useMemo(() => {
+    return Array.from(
+      new Set(data.map((d) => d.category).concat(excludedCategories))
+    ).filter(Boolean).sort();
+  }, [data, excludedCategories]);
+
+  const filteredCategories = useMemo(() => {
+    return allCategories.filter(
+      (cat) => !excludedCategories.includes(cat)
+    );
+  }, [allCategories, excludedCategories]);
 
   const labels = filteredCategories;
-  const values = labels.map(
-    (label) => data.find((d) => d.category === label)?.total || 0
-  );
 
-  const chartData = {
+  const values = useMemo(() => {
+    return labels.map(
+      (label) => data.find((d) => d.category === label)?.total || 0
+    );
+  }, [labels, data]);
+
+  const chartData = useMemo(() => ({
     labels,
     datasets: [
       {
@@ -68,7 +76,13 @@ const CategoryBreakdownChart: React.FC<Props> = ({
         barThickness: 30,
       },
     ],
-  };
+  }), [labels, values]);
+
+  const shouldAnimate = useMemo(() => {
+    const animate = labels.length >= prevLabelsLength.current;
+    prevLabelsLength.current = labels.length;
+    return animate;
+  }, [labels]);
 
   const options: ChartOptions<'bar'> = {
     responsive: true,
@@ -103,13 +117,17 @@ const CategoryBreakdownChart: React.FC<Props> = ({
       : (e, elements) => {
           if (!onCategoryClick || elements.length === 0) return;
           const index = elements[0].index;
-          const category = labels[index];
-          onCategoryClick(category);
+          if (index >= 0 && index < labels.length) {
+            const category = labels[index];
+            onCategoryClick(category);
+          }
         },
-    animation: {
-      duration: 700,
-      easing: 'easeOutQuart',
-    },
+    animation: shouldAnimate
+      ? {
+          duration: 700,
+          easing: 'easeOutQuart',
+        }
+      : false,
   };
 
   const handleMonthChange = useCallback(
@@ -118,6 +136,10 @@ const CategoryBreakdownChart: React.FC<Props> = ({
     },
     [onMonthChange]
   );
+
+  if (!data || data.length === 0) {
+    return <div className="chart-wrapper">No spending data available.</div>;
+  }
 
   return (
     <div className="chart-wrapper">

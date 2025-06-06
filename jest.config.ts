@@ -15,6 +15,7 @@ const config: Config = {
       },
     ],
   },
+  coverageReporters: ["cobertura", "lcov"],
   moduleNameMapper: {
     '^@src/(.*)$': '<rootDir>/src/$1',
     '\\.(scss|sass|css)$': 'identity-obj-proxy',

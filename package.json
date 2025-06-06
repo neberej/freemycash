@@ -20,7 +20,7 @@
     "landing": "webpack serve --config ./landing-page/webpack.config.ts",
     "serve:landing": "webpack serve --config ./landing-page/webpack.config.ts --static dist --port 9001",
     "----": "",
-    "test": "jest",
+    "test": "jest --silent",
     "coverage": "jest --coverage",
     "kill-port-ui": "lsof -iTCP:3000 -sTCP:LISTEN -n -P | grep node | awk '{print $2}' | xargs -r kill -9",
     "kill-port-landing": "lsof -iTCP:5000 -sTCP:LISTEN -n -P | grep node | awk '{print $2}' | xargs -r kill -9",
