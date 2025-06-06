@@ -1,0 +1,63 @@
+#chartjs-tooltip {
+  position: absolute;
+  z-index: 10;
+  background: linear-gradient(135deg, #f9f9ff, #eef3fb); // soft gradient
+  backdrop-filter: blur(12px); // modern blur effect
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 220, 255, 0.4); // subtle border
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  pointer-events: none;
+  white-space: nowrap;
+  line-height: 1.5;
+  color: #111;
+  min-width: 180px;
+  max-width: 240px;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+
+  .tooltip-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e90ff;
+    margin-bottom: 10px;
+  }
+
+ .tooltip-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    line-height: 1.4;
+
+    span:first-child {
+      flex: 1;
+      text-align: left;
+    }
+
+    span:last-child {
+      flex-shrink: 0;
+      text-align: right;
+      font-variant-numeric: tabular-nums; // align numbers more evenly
+    }
+
+    &.tooltip-income {
+      color: #66b2b2;
+    }
+
+    &.tooltip-expenses {
+      color: #e74c3c;
+    }
+
+    &.tooltip-savings {
+      color: #0d6efd;
+      font-weight: 600;
+    }
+  }
+
+  .savings-separator {
+    border-top: 1px dashed #ccc;
+    margin: 8px 0;
+  }
+}

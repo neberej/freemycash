@@ -1,65 +1,37 @@
-import React, { createContext, useState, useEffect } from 'react';
-import { Navigate, BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { useStore } from '@src/store/useStore';
 import { useLocalStorageSync } from '@src/hooks/localStorageHook';
-import Header from '@src/components/header/Header';
-import WelcomeScreen from '@src/components/welcome-screen/WelcomeScreen';
-import Overview from '@src/components/overview/Overview';
-import Expenses from '@src/components/expenses/Expenses';
-import Income from '@src/components/income/Income';
-import Transactions from '@src/components/transactions/Transactions';
-import Settings from '@src/components/settings/Settings';
-import Upload from '@src/components/upload/Upload';
-import EditData from '@src/components/edit-data/EditData';
-import CreateNewFile from '@src/components/create-new-file/CreateNewFile';
-import { FinancialData } from '@src/types';
+import { Header, WelcomeScreen, CreateNewFile, Upload, Overview, Visualize, Expenses, Income, Transactions, Settings, EditData, Footer } from '@src/components';
 import ProtectedRoutes from '@src/common/ProtectedRoutes';
+import { getQuery } from '@src/utils/query'
+
 import './App.scss';
 
-export const DataContext = createContext<{
-  data: FinancialData | null;
-  setData: (data: FinancialData | null) => void;
-  isModified: boolean;
-  setIsModified: (value: boolean) => void;
-}>({
-  data: null,
-  setData: () => {},
-  isModified: false,
-  setIsModified: () => {},
-});
-
-// Props interface for AnimatedRoutes
-interface AnimatedRoutesProps {
-  hasData: boolean;
-}
-
-// Functional component to wrap Routes with transition
-const AnimatedRoutes: React.FC<AnimatedRoutesProps> = ({ hasData }) => {
+// Routes for users with data
+const PrivateRoutes: React.FC = () => {
   const location = useLocation();
-
   return (
     <TransitionGroup component={null}>
-      <CSSTransition
-        key={location.pathname}
-        classNames="fade"
-        timeout={250}
-        unmountOnExit
-      >
+      <CSSTransition key={location.pathname} classNames="fade" timeout={250} unmountOnExit appear>
         <div className="route-container">
           <Routes location={location}>
-            <Route path="/" element={<WelcomeScreen />} />
-            <Route path="*" element={<Navigate to={hasData ? '/overview' : '/'} replace />} />
+            <Route path="/" element={<Navigate to="/overview" replace />} />
+            <Route path="/app" element={<Navigate to="/overview" replace />} />
             <Route path="/create-new" element={<CreateNewFile />} />
-            <Route element={<ProtectedRoutes hasData={hasData} />}>
+            <Route path="/upload" element={<Upload />} />
+            <Route element={<ProtectedRoutes hasData={true} />}>
               <Route path="/overview" element={<Overview />} />
               <Route path="/expenses" element={<Expenses />} />
               <Route path="/income" element={<Income />} />
               <Route path="/transactions" element={<Transactions />} />
+              <Route path="/visualize" element={<Visualize />} />
               <Route path="/settings" element={<Settings />} />
-              <Route path="/edit-data" element={<EditData />} />
+              <Route path="/data" element={<EditData />} />
             </Route>
-            <Route path="/upload" element={<Upload />} />
+            <Route path="*" element={<Navigate to="/overview" replace />} />
           </Routes>
         </div>
       </CSSTransition>
@@ -67,23 +39,52 @@ const AnimatedRoutes: React.FC<AnimatedRoutesProps> = ({ hasData }) => {
   );
 };
 
+// Routes for unauthenticated users
+const PublicRoutes: React.FC = () => (
+  <Routes>
+    <Route path="/" element={<WelcomeScreen />} />
+    <Route path="/app" element={<WelcomeScreen />} />
+    <Route path="/create-new" element={<CreateNewFile />} />
+    <Route path="/upload" element={<Upload />} />
+    <Route path="*" element={<Navigate to="/" replace />} />
+  </Routes>
+);
+
 const App: React.FC = () => {
-  const { data, setData } = useStore();
+  const { data, setData, isDemo, setIsDemo } = useStore();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useLocalStorageSync(setIsLoaded);
 
-  if (!isLoaded) {
-    return null; // Avoid rendering until data is checked
-  }
+  useEffect(() => {
+    const demoFromURL = getQuery('demo') === 'true';
+    if (demoFromURL) setIsDemo(true);
+  }, []);
+
+  // Load demo.json if query is ?demo and no data exists
+  useEffect(() => {
+    if (isDemo && !data) {
+      fetch('finance-demo.json')
+        .then((res) => {
+          if (!res.ok) throw new Error('Failed to load demo data');
+          return res.json();
+        })
+        .then((json) => setData(json))
+        .catch((err) => console.error('Demo load error:', err));
+    }
+  }, [isDemo, data, setData]);
+
+  if (!isLoaded) return null;
+  const hasData = !!data;
 
   return (
     <Router>
       <div className="app">
         <Header />
-        <main className="main-content">
-          <AnimatedRoutes hasData={!!data} />
+        <main className={hasData ? 'main-content' : 'landing-content'}>
+          {hasData ? <PrivateRoutes /> : <PublicRoutes />}
         </main>
+        <Footer />
       </div>
     </Router>
   );

@@ -28,7 +28,7 @@ const EditData: React.FC = () => {
 
   return (
     <div className="edit-data">
-      <h2>{messages.editData.title}</h2>
+      <h3>{messages.editData.title}</h3>
       <textarea
         value={jsonInput}
         onChange={(e) => setJsonInput(e.target.value)}

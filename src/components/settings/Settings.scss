@@ -7,21 +7,49 @@
 .settings {
   .settings-option {
     flex-basis: 100%;
-  }
-  label {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    color: var(--text-secondary);
-    flex: 1;
-    margin-bottom: 0.5em;
+    padding: 5px;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      width: 100%;
+      gap: 0.2rem;
+      margin-bottom: 0;
+
+      input[type="text"] {
+        width: 100%;
+        border-radius: 0.2em;
+        background-color: rgba(255,255,255,.2);
+      }
+    }
+
+    &.warning {
+      .tooltip-icon {
+        color: red;
+      }
+    }
+
+    // Checkbox container stays horizontal
+    label:has(input[type="checkbox"]) {
+      flex-direction: row;
+      align-items: center;
+    }
   }
   .settings-tooltips {
     .tooltip-icon {
-      color: red;
-      font-size: 16px;
-      width: 22px;
-      height: 22px;
+      color: #000;
+      font-size: 14px;
+      font-weight: 600;
+      width: 20px;
+      height: 20px;
+      &:hover {
+        background: #fff;
+        border: 1px solid #ddd;
+      }
     }
   }
 }
+

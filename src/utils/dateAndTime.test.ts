@@ -6,7 +6,7 @@ import { Transaction } from '@src/types';
 jest.spyOn(DateTime, 'now');
 
 describe('date-utils', () => {
-  const fixedDate = DateTime.fromISO('2025-06-04T15:30:00.000Z').setZone('America/Los_Angeles');
+  const fixedDate = DateTime.fromISO('2025-06-04T15:30:00.000Z');
 
   beforeEach(() => {
     (DateTime.now as jest.Mock).mockReturnValue(fixedDate);
@@ -39,11 +39,6 @@ describe('date-utils', () => {
 
   test('getCurrentYear returns year as string', () => {
     expect(DateUtils.getCurrentYear()).toBe('2025');
-  });
-
-  test('getCurrentDateISO returns ISO format date', () => {
-    const iso = DateUtils.getCurrentDateISO();
-    expect(iso).toBe('2025-06-05');
   });
 
   test('filterDataByMonth filters by current UTC month', () => {

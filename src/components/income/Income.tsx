@@ -1,4 +1,4 @@
-import React, { useContext, useState, useCallback, useMemo } from 'react';
+import React, { useContext, useState, useCallback, useMemo, useRef } from 'react';
 import { useStore } from '@src/store/useStore';
 import messages from '@src/static/messages.json';
 import { processIncome, formatDate } from '@src/utils/income';
@@ -14,6 +14,7 @@ const Income: React.FC = () => {
     []
   );
   const [selectedMonth, setSelectedMonth] = useState<string>(currentMonth);
+  const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   // Input validation
   if (!data || !data.transactions || !Array.isArray(data.transactions)) {
@@ -30,9 +31,23 @@ const Income: React.FC = () => {
     [data.transactions, selectedMonth, data.currency]
   );
 
+  // Sort months in descending order (most recent first)
+  const sortedMonths = useMemo(() => {
+    const sorted = [...months].sort((a, b) => b.localeCompare(a));
+    return sorted;
+  }, [months]);
+
   // Debounce month selection for performance with large datasets
   const handleMonthChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedMonth(e.target.value);
+  }, []);
+
+  // Handle category jump
+  const handleCategoryJump = useCallback((category: string) => {
+    const element = categoryRefs.current[category];
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }, []);
 
   return (
@@ -44,12 +59,12 @@ const Income: React.FC = () => {
         onChange={handleMonthChange}
         aria-label="Select month for income"
       >
-        <option value="all">{messages.income.allMonths}</option>
-        {months.map((month) => (
+        {sortedMonths.map((month) => (
           <option key={month} value={month}>
             {formatMonthYearDisplay(month)}
           </option>
         ))}
+        <option value="all">{messages.income.allMonths}</option>
       </select>
       {filteredIncome.length === 0 ? (
         <div className="no-data">
@@ -57,9 +72,24 @@ const Income: React.FC = () => {
         </div>
       ) : (
         <div className="income-content">
+          {filteredIncome.length > 1 && <div className="category-jump-links">
+            {filteredIncome.map(({ category }) => (
+              <button
+                key={category}
+                className="category-jump-link"
+                onClick={() => handleCategoryJump(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>}
           <div className="income-list">
             {filteredIncome.map(({ category, transactions, total }) => (
-              <div key={category} className="category-group">
+              <div
+                key={category}
+                className="category-group"
+                ref={(el) => (categoryRefs.current[category] = el)}
+              >
                 <h3>{category}</h3>
                 {transactions.map((t) => (
                   <div key={t.id || `${t.date}-${t.amount}-${t.merchant}`} className="transaction-item">

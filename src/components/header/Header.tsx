@@ -7,19 +7,24 @@ import { useStore } from '@src/store/useStore';
 import { FiSettings } from "react-icons/fi";
 import './Header.scss';
 
-const Header: React.FC = () => {
-  const { data, setData } = useStore();
+interface HeaderProps {
+
+}
+
+const Header: React.FC<HeaderProps> = () => {
+  const { data, isDemo } = useStore();
   return (
     <header className="header">
       <Link className="tab logo" to={data ? '/overview' : '/'}>
-        <span className="logo-bill"></span>
+        <span className={`logo-bill ${isDemo && 'demo'}`}></span>
       </Link>
       {data && <nav>
         <Link className="tab" to="/overview">{messages.overview.title}</Link>
         <Link className="tab" to="/expenses">{messages.expenses.title}</Link>
         <Link className="tab" to="/income">{messages.income.title}</Link>
         <Link className="tab" to="/transactions">{messages.transactions.title}</Link>
-        <Link className="tab" to="/edit-data">{messages.editData.title}</Link>
+        <Link className="tab" to="/visualize">{messages.visualize.title}</Link>
+        <Link className="tab" to="/data">{messages.editData.title}</Link>
       </nav>}
       <div className="header-actions">
         <Link className={`button ${!data && 'disabled'}`} to="/settings">

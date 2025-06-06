@@ -40,7 +40,7 @@ describe('EditTransaction', () => {
     expect(screen.getByDisplayValue('2025-06-01')).toBeInTheDocument();
   });
 
-  it.only('shows error if required fields are empty', async () => {
+  it('shows error if required fields are empty', async () => {
   render(
     <EditTransaction
       transaction={{

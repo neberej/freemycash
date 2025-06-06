@@ -7,17 +7,20 @@ import { saveToLocalStorage, getFromLocalStorage } from '@src/utils/saveData';
 type State = {
   data: FinancialData | null;
   isModified: boolean;
+  isDemo: boolean;
   setData: (data: FinancialData | null) => void;
   setIsModified: (setIsModified: boolean) => void;
   syncFromApi: () => Promise<void>;
   syncToApi: () => Promise<void>;
+  setIsDemo: (setIsModified: boolean) => void;
 };
 
 export const useStore = create<State>((set, get) => ({
   data: null,
+  isDemo: false,
   isModified: false,
   setData: (data) => {
-    console.log("saving data..", data)
+    //console.log("saving data..", data)
     set({ data });
     if (data?.saveInBrowser) saveToLocalStorage(data);
   },
@@ -36,4 +39,5 @@ export const useStore = create<State>((set, get) => ({
       await writeToApi(url, data);
     }
   },
+  setIsDemo: (isDemo: boolean) => set({ isDemo })
 }));

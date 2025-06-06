@@ -7,6 +7,7 @@ import { formatCurrency } from '@src/utils/savings';
 import { formatDate } from '@src/utils/expenses';
 import EditTransaction from '@src/components/edit-transaction/EditTransaction';
 import ConfirmDelete from '@src/components/confirm-delete/ConfirmDelete';
+import ReactPaginate from 'react-paginate';
 import './Transactions.scss';
 
 const Transactions: React.FC = () => {
@@ -14,6 +15,16 @@ const Transactions: React.FC = () => {
   const [editTransaction, setEditTransaction] = useState<Transaction | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const itemsPerPage = 10;
+  const offset = currentPage * itemsPerPage;
+  const currentTransactions = data?.transactions.slice(offset, offset + itemsPerPage) || [];
+  const pageCount = data ? Math.ceil(data.transactions.length / itemsPerPage) : 0;
+
+  const handlePageClick = ({ selected }: { selected: number }) => {
+    setCurrentPage(selected);
+  };
 
   if (!data) return <div>{messages.transactions.noData}</div>;
 
@@ -75,37 +86,50 @@ const Transactions: React.FC = () => {
       {data.transactions.length === 0 ? (
         <p>{messages.transactions.noData}</p>
       ) : (
-        <table className="table">
-          <thead>
-            <tr>
-              <th>{messages.transactions.headers.date}</th>
-              <th>{messages.transactions.headers.type}</th>
-              <th>{messages.transactions.headers.merchant}</th>
-              <th>{messages.transactions.headers.category}</th>
-              <th>{messages.transactions.headers.amount}</th>
-              <th>{messages.transactions.headers.actions}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.transactions.map((transaction) => (
-              <tr key={transaction.id}>
-                <td>{formatDate(transaction.date)}</td>
-                <td>{transaction.type}</td>
-                <td>{transaction.merchant}</td>
-                <td>{transaction.category || '-'}</td>
-                <td>{formatCurrency(transaction.amount, data.currency)}</td>
-                <td>
-                  <button className="button" onClick={() => handleEditTransaction(transaction)}>
-                    {messages.buttons.edit}
-                  </button>
-                  <button className="button" onClick={() => handleConfirmDelete(transaction.id!)}>
-                    {messages.buttons.delete}
-                  </button>
-                </td>
+        <>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>{messages.transactions.headers.date}</th>
+                <th>{messages.transactions.headers.type}</th>
+                <th>{messages.transactions.headers.merchant}</th>
+                <th>{messages.transactions.headers.category}</th>
+                <th>{messages.transactions.headers.amount}</th>
+                <th>{messages.transactions.headers.actions}</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {currentTransactions.map((transaction) => (
+                <tr key={transaction.id}>
+                  <td>{formatDate(transaction.date)}</td>
+                  <td>{transaction.type}</td>
+                  <td>{transaction.merchant}</td>
+                  <td>{transaction.category || '-'}</td>
+                  <td>{formatCurrency(transaction.amount, data.currency)}</td>
+                  <td>
+                    <button className="button" onClick={() => handleEditTransaction(transaction)}>
+                      {messages.buttons.edit}
+                    </button>
+                    <button className="button" onClick={() => handleConfirmDelete(transaction.id!)}>
+                      {messages.buttons.delete}
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <ReactPaginate
+            previousLabel={'←'}
+            nextLabel={'→'}
+            breakLabel={'...'}
+            pageCount={pageCount}
+            marginPagesDisplayed={1}
+            pageRangeDisplayed={3}
+            onPageChange={handlePageClick}
+            containerClassName={'pagination'}
+            activeClassName={'active'}
+          />
+        </>
       )}
       {isDialogOpen && editTransaction && (
         <EditTransaction
@@ -120,10 +144,7 @@ const Transactions: React.FC = () => {
         />
       )}
       {confirmDeleteId && (
-        <ConfirmDelete
-          onConfirm={handleDeleteTransaction}
-          onCancel={handleCancelDelete}
-        />
+        <ConfirmDelete onConfirm={handleDeleteTransaction} onCancel={handleCancelDelete} />
       )}
     </div>
   );

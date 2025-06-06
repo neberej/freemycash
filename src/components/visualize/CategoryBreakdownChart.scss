@@ -1,0 +1,47 @@
+.category-chart {
+  .legend-container {
+    margin: 20px 0;
+  }
+  .legend-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+    display: inline;
+  }
+  .legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .legend-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .legend-btn:hover:not(:disabled) {
+    background-color: #3a7bd5;
+    color: #fff;
+  }
+
+  .legend-btn.excluded {
+    background-color: #d3d3d3;
+    color: #6b7280;
+  }
+
+  .legend-btn.excluded s {
+    color: #6b7280;
+  }
+
+  .legend-btn:disabled {
+    background-color: #e5e5e5;
+    color: #a0a0a0;
+    cursor: not-allowed;
+  }
+}

@@ -12,13 +12,9 @@
   border-radius: 1rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   font-family: 'Inter', sans-serif;
-
-  h2 {
-    font-size: 1.75rem;
-    color: $text-primary;
-    margin-bottom: 1.5rem;
+  h3 {
+    text-align: left;
   }
-
   textarea {
     width: 100%;
     padding: 1rem;
