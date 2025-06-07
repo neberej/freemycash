@@ -1,9 +1,7 @@
 {
-  "routes": [
-    {
-      "route": "/*",
-      "serve": "/index.html",
-      "statusCode": 200
+   "responseOverrides": {
+        "404": {
+          "rewrite": "/index.html"
+        }
     }
-  ]
 }
