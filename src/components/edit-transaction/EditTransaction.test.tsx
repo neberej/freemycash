@@ -8,6 +8,8 @@ import messages from '@src/static/messages.json';
 jest.mock('@src/utils/dateAndTime', () => ({
   isValidDate: jest.fn(() => true),
   getCurrentDateISO: jest.fn(() => '2025-06-04'),
+  toLocalDateInput: jest.fn((date: string) => date),
+  fromLocalDateInput: jest.fn((date: string) => date),
 }));
 
 const defaultTransaction: Transaction = {

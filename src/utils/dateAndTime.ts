@@ -192,3 +192,14 @@ export const formatMonthYearDisplay = (month: string): string => {
   }
   return dt.toLocaleString({ month: 'long', year: 'numeric' }, { locale: getLocale() });
 };
+
+export const toLocalDateInput = (date: string): string => {
+  const dt = DateTime.fromISO(date, { zone: 'utc' }).setZone(getUserTimezone());
+  return dt.toFormat('yyyy-MM-dd');
+};
+
+
+export const fromLocalDateInput = (date: string): string => {
+  const dt = DateTime.fromFormat(date, 'yyyy-MM-dd', { zone: getUserTimezone() }).toUTC();
+  return dt.toFormat('yyyy-MM-dd');
+};

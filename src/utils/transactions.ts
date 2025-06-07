@@ -3,7 +3,7 @@ import { getCurrentDateISO } from '@src/utils/dateAndTime';
 
 // Generates a unique transaction ID
 export const generateTransactionId = (): string => {
-  return `t-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  return `t-${Date.now()}`;
 };
 
 // Creates a new transaction with default values

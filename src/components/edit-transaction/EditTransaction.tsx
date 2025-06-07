@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Transaction } from '@src/types';
 import Overlay from '@src/components/overlay/Overlay';
-import { isValidDate, getCurrentDateISO } from '@src/utils/dateAndTime';
+import { isValidDate, getCurrentDateISO, toLocalDateInput, fromLocalDateInput } from '@src/utils/dateAndTime';
 import messages from '@src/static/messages.json';
 import './EditTransaction.scss';
 
@@ -31,7 +31,8 @@ const EditTransaction: React.FC<EditTransactionProps> = ({
   // Sync formData with transaction prop changes
   useEffect(() => {
     // Normalize date to yyyy-MM-dd format
-    let normalizedDate = transaction.date;
+    let normalizedDate = toLocalDateInput(transaction.date);
+    //let normalizedDate = transaction.date;
     if (normalizedDate.includes('T')) {
       normalizedDate = normalizedDate.split('T')[0];
     }
@@ -86,7 +87,7 @@ const EditTransaction: React.FC<EditTransactionProps> = ({
       // Ensure date is in yyyy-MM-dd format
       const saveData = {
         ...formData,
-        date: formData.date.includes('T') ? formData.date.split('T')[0] : formData.date,
+        date: fromLocalDateInput(formData.date),
       };
       onSave(saveData);
       onClose();

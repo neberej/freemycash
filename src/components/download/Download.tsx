@@ -19,16 +19,22 @@ const Download: React.FC = () => {
     if (!data) return;
     const today = getCurrentDateISO();
     const filename = data.prefixDownload ? `finance-data-${today}.json` : 'finance-data.json';
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
+    const jsonStr = JSON.stringify(data, null, 2);
+    const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonStr);
+
     const a = document.createElement('a');
-    a.href = url;
+    a.href = dataUri;
     a.download = filename;
+
+    // On iOS, must be triggered directly inside user gesture (like onClick)
+    document.body.appendChild(a);
     a.click();
-    URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+
     setIsModified(false);
     addNotification('Data downloaded successfully', 'success');
   };
+
 
   return (
     <>

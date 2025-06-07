@@ -33,7 +33,6 @@ const WelcomeScreen: React.FC = () => {
             id: t.id || `t-${timestamp}-${uploadCounter++}`,
           })),
         };
-        console.log('Uploading data:', updatedData); // Debug log
         setData(updatedData);
         setIsModified(false);
         navigate('/overview');

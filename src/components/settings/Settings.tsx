@@ -53,6 +53,36 @@ const Settings: React.FC = () => {
       <div className="container-inner">
         <div className="settings-option">
           <label>
+            <input
+              type="checkbox"
+              checked={data?.prefixDownload || false}
+              onChange={(e) => {
+                if (data) {
+                  setData({ ...data, prefixDownload: e.target.checked });
+                }
+              }}
+            />
+            {messages.settings.prefixDate}
+            <Tooltip tooltip={messages.settings.prefixTooltip} className="settings-tooltips" />
+          </label>
+        </div>
+        <div className="settings-option warning">
+          <label>
+            <input
+              type="checkbox"
+              checked={data?.saveInBrowser || false}
+              onChange={(e) => {
+                if (data) {
+                  setData({ ...data, saveInBrowser: e.target.checked });
+                }
+              }}
+            />
+            {messages.settings.saveInBrowser}
+            <Tooltip tooltip={messages.settings.saveInBrowserTooltip} className="settings-tooltips" />
+          </label>
+        </div>
+        <div className="settings-option">
+          <label>
             {messages.settings.categories}
             <input
               className="input2"
@@ -84,36 +114,6 @@ const Settings: React.FC = () => {
               onChange={(e) => setWriteApi(e.target.value)}
               placeholder="/write"
             />
-          </label>
-        </div>
-        <div className="settings-option">
-          <label>
-            <input
-              type="checkbox"
-              checked={data?.prefixDownload || false}
-              onChange={(e) => {
-                if (data) {
-                  setData({ ...data, prefixDownload: e.target.checked });
-                }
-              }}
-            />
-            {messages.settings.prefixDate}
-            <Tooltip tooltip={messages.settings.prefixTooltip} className="settings-tooltips" />
-          </label>
-        </div>
-        <div className="settings-option warning">
-          <label>
-            <input
-              type="checkbox"
-              checked={data?.saveInBrowser || false}
-              onChange={(e) => {
-                if (data) {
-                  setData({ ...data, saveInBrowser: e.target.checked });
-                }
-              }}
-            />
-            {messages.settings.saveInBrowser}
-            <Tooltip tooltip={messages.settings.saveInBrowserTooltip} className="settings-tooltips" />
           </label>
         </div>
         <button className="button2" onClick={handleSave}>{messages.buttons.save}</button>

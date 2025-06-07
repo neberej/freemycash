@@ -36,7 +36,7 @@
     "prefixTooltip": "When you download your data, the filename will have date on it.",
     "prefixDate": "Prefix filename with date",
     "categories": "Categories for expenses",
-    "backendApi": "(Optional) Backend API details:",
+    "backendApi": "(For self-hosting) Backend API details:",
     "savedWithStorageCleared": "Settings saved and local storage cleared"
   },
   "overview": {

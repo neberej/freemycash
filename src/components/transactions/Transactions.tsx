@@ -20,11 +20,17 @@ const Transactions: React.FC = () => {
   const itemsPerPage = 10;
   const offset = currentPage * itemsPerPage;
   const sortedTransactions = React.useMemo(() => {
-    if (!data) return [];
-    return [...data.transactions].sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
+  if (!data) return [];
+
+  return [...data.transactions].sort((a, b) => {
+    const dateDiff = new Date(b.date).getTime() - new Date(a.date).getTime();
+    if (dateDiff !== 0) return dateDiff;
+
+      // Secondary: Sort by ID (descending, newer first)
+      return b.id.localeCompare(a.id);
+    });
   }, [data]);
+
   const currentTransactions = sortedTransactions.slice(offset, offset + itemsPerPage);
   const pageCount = data ? Math.ceil(sortedTransactions.length / itemsPerPage) : 0;
 

@@ -216,7 +216,7 @@ const TrendLineChart: React.FC<Props> = ({ transactions, currency, hideLegend })
 export default TrendLineChart;
 
 export interface Transaction {
-  id?: string;
+  id: string;
   type: 'income' | 'expense';
   date: string;
   merchant: string;

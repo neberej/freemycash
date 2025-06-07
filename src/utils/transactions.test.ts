@@ -41,11 +41,23 @@ describe('transactions.ts', () => {
   });
 
   describe('generateTransactionId', () => {
-    it('generates a unique transaction ID', () => {
+    it('generates a proper transaction ID', () => {
       const id1 = generateTransactionId();
       const id2 = generateTransactionId();
-      expect(id1).toMatch(/^t-\d+-\w+$/);
+      expect(id1).toMatch(/^t-\d+$/);
+    });
+    it('generates a unique transaction ID', () => {
+      const mockNow = jest.spyOn(Date, 'now');
+      mockNow.mockReturnValueOnce(1000).mockReturnValueOnce(1001);
+
+      const id1 = generateTransactionId();
+      const id2 = generateTransactionId();
+
+      expect(id1).toBe('t-1000');
+      expect(id2).toBe('t-1001');
       expect(id1).not.toEqual(id2);
+
+      mockNow.mockRestore();
     });
   });
 
@@ -53,7 +65,7 @@ describe('transactions.ts', () => {
     it('creates a new expense transaction', () => {
       const transaction = createNewTransaction('expense', categories);
       expect(transaction).toEqual({
-        id: expect.stringMatching(/^t-\d+-\w+$/),
+        id: expect.stringMatching(/^t-\d+$/),
         type: 'expense',
         date: '2025-06-01',
         merchant: '',
@@ -65,7 +77,7 @@ describe('transactions.ts', () => {
     it('creates a new income transaction', () => {
       const transaction = createNewTransaction('income', categories);
       expect(transaction).toEqual({
-        id: expect.stringMatching(/^t-\d+-\w+$/),
+        id: expect.stringMatching(/^t-\d+$/),
         type: 'income',
         date: '2025-06-01',
         merchant: '',

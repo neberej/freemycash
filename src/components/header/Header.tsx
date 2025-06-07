@@ -26,14 +26,14 @@ const Header: React.FC<HeaderProps> = () => {
         <Link className="tab" to="/visualize">{messages.visualize.title}</Link>
         <Link className="tab" to="/data">{messages.editData.title}</Link>
       </nav>}
-      <div className="header-actions">
-        <Link className={`button ${!data && 'disabled'}`} to="/settings">
+      {data && <div className="header-actions">
+        <Link className="button" to="/settings">
           <FiSettings />
           <span className="visually-hidden">{messages.settings.title}</span>
         </Link>
         <Download />
         <ClearData />
-      </div>
+      </div>}
     </header>
   );
 };

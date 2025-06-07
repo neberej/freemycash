@@ -1,4 +1,7 @@
+import { FetchMock } from 'jest-fetch-mock';
 import { getData, postData } from './api';
+
+const fetchMock = fetch as FetchMock;
 
 beforeEach(() => {
   fetchMock.resetMocks();
