@@ -31,6 +31,7 @@ const CsvData: React.FC = () => {
         setParsedTransactions(transactions.map((t: any) => ({ ...t })));
         setIsOverlayOpen(true);
       } catch (error) {
+        addNotification(`Failed to import transactions.`, 'error');
         console.error('CSV parse error:', error);
       }
     };

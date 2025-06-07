@@ -18,5 +18,11 @@
     margin-bottom: 0.8rem;
     letter-spacing: 0.05rem;
   }
-  
+  input[type="file"]::file-selector-button , button {
+    width: 150px;
+    height: 35px;
+  }
+  input[type="file"] {
+    color:transparent;
+  }
 }

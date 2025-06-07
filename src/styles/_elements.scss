@@ -120,6 +120,7 @@ input[type="file"] {
   display: block;
   position: relative;
   font-size: 15px;
+  height: 35px;
   color: $text-color;
 
   &::file-selector-button {
