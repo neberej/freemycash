@@ -16,23 +16,37 @@ const Download: React.FC = () => {
   };
 
   const handleDownload = () => {
-    if (!data) return;
-    const today = getCurrentDateISO();
-    const filename = data.prefixDownload ? `finance-data-${today}.json` : 'finance-data.json';
-    const jsonStr = JSON.stringify(data, null, 2);
-    const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonStr);
+    if (!data) {
+      addNotification('No data to download', 'error');
+      return;
+    }
 
-    const a = document.createElement('a');
-    a.href = dataUri;
-    a.download = filename;
+    try {
+      const today = getCurrentDateISO();
+      const filename = data.prefixDownload ? `finance-data-${today}.json` : 'finance-data.json';
+      const jsonStr = JSON.stringify(data, null, 2);
+      const blob = new Blob([jsonStr], { type: 'application/json' });
+      const url = window.URL.createObjectURL(blob);
 
-    // On iOS, must be triggered directly inside user gesture (like onClick)
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
 
-    setIsModified(false);
-    addNotification('Data downloaded successfully', 'success');
+      // Append to DOM before clicking (required for iOS Safari)
+      document.body.appendChild(a);
+
+      // Slight delay to ensure DOM readiness and gesture handling
+      setTimeout(() => {
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+        setIsModified(false);
+        addNotification('Data downloaded successfully', 'success');
+      }, 0);
+    } catch (error) {
+      console.error('Download failed:', error);
+      addNotification('Failed to download data', 'error');
+    }
   };
 
 
