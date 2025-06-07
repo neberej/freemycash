@@ -5,10 +5,15 @@
 @use 'sass:math';
 
 .settings {
+  button {
+    background-color: $primary;
+    &:hover {
+      background-color: color.adjust($primary, $lightness: -5%);
+    }
+  }
   .settings-option {
     flex-basis: 100%;
     padding: 5px;
-
     label {
       display: flex;
       flex-direction: column;

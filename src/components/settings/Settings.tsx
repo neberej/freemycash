@@ -116,7 +116,7 @@ const Settings: React.FC = () => {
             />
           </label>
         </div>
-        <button className="button2" onClick={handleSave}>{messages.buttons.save}</button>
+        <button className="button" onClick={handleSave}>{messages.buttons.save}</button>
         {notifications.map((notification) => (
           <Notification
             key={notification.id}
