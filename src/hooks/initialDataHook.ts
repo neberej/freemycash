@@ -4,31 +4,29 @@ import { getFromLocalStorage } from '@src/utils/saveData';
 
 export const useDataInitializer = (): boolean => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const { data, setData, syncFromApi } = useStore();
-  
-  const externalApiRead = data?.externalApi?.read;
-  const saveInBrowser = data?.saveInBrowser;
+  const { setData, syncFromApi } = useStore();
 
   useEffect(() => {
     const init = async () => {
-      if (externalApiRead) {
+      const savedData = getFromLocalStorage();
+
+      if (savedData?.externalApi?.read) {
         await syncFromApi();
         setIsLoaded(true);
         return;
       }
-      if (saveInBrowser) {
-        const savedData = getFromLocalStorage();
-        if (savedData) setData(savedData);
+
+      if (savedData?.saveInBrowser) {
+        setData(savedData);
         setIsLoaded(true);
         return;
       }
+
       setIsLoaded(true);
     };
 
     init();
-  }, [externalApiRead, saveInBrowser, setData, syncFromApi]);
-
+  }, []);
 
   return isLoaded;
-
 };

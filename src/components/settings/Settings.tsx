@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import messages from '@src/static/messages.json';
 import { useStore } from '@src/store/useStore';
 import Notification from '@src/components/notification/Notification';
@@ -9,9 +9,12 @@ import './Settings.scss';
 
 const Settings: React.FC = () => {
   const { data, setData } = useStore();
+
   const [categoriesInput, setCategoriesInput] = useState(data?.categories.join(', ') || '');
   const [readApi, setReadApi] = useState(data?.externalApi?.read || '');
   const [writeApi, setWriteApi] = useState(data?.externalApi?.write || '');
+  const [prefixDownload, setPrefixDownload] = useState(data?.prefixDownload || false);
+  const [saveInBrowser, setSaveInBrowser] = useState(data?.saveInBrowser || false);
   const [notifications, setNotifications] = useState<NotificationType[]>([]);
 
   const addNotification = (message: string, type: NotificationType['type']) => {
@@ -26,22 +29,20 @@ const Settings: React.FC = () => {
       .map((cat) => cat.trim())
       .filter((cat) => cat);
 
-    // Update data with new categories and current saveInBrowser value
     const updatedData = {
       ...data,
       categories: newCategories,
-      externalApi: {read: readApi, write: writeApi}
+      prefixDownload,
+      saveInBrowser,
+      externalApi: { read: readApi, write: writeApi },
     };
 
-    // Set updated data in DataContext
     setData(updatedData);
 
-    if (data.saveInBrowser) {
-      // Save to localStorage if saveInBrowser is checked
+    if (saveInBrowser) {
       saveToLocalStorage(updatedData);
       addNotification('Settings saved successfully', 'success');
     } else {
-      // Clear localStorage if saveInBrowser is unchecked
       localStorage.removeItem('financialData');
       addNotification('Settings saved and local storage cleared', 'success');
     }
@@ -55,12 +56,8 @@ const Settings: React.FC = () => {
           <label>
             <input
               type="checkbox"
-              checked={data?.prefixDownload || false}
-              onChange={(e) => {
-                if (data) {
-                  setData({ ...data, prefixDownload: e.target.checked });
-                }
-              }}
+              checked={prefixDownload}
+              onChange={(e) => setPrefixDownload(e.target.checked)}
             />
             {messages.settings.prefixDate}
             <Tooltip tooltip={messages.settings.prefixTooltip} className="settings-tooltips" />
@@ -70,12 +67,8 @@ const Settings: React.FC = () => {
           <label>
             <input
               type="checkbox"
-              checked={data?.saveInBrowser || false}
-              onChange={(e) => {
-                if (data) {
-                  setData({ ...data, saveInBrowser: e.target.checked });
-                }
-              }}
+              checked={saveInBrowser}
+              onChange={(e) => setSaveInBrowser(e.target.checked)}
             />
             {messages.settings.saveInBrowser}
             <Tooltip tooltip={messages.settings.saveInBrowserTooltip} className="settings-tooltips" />
@@ -121,7 +114,9 @@ const Settings: React.FC = () => {
           <Notification
             key={notification.id}
             notification={notification}
-            onClose={() => setNotifications(notifications.filter((n) => n.id !== notification.id))}
+            onClose={() =>
+              setNotifications(notifications.filter((n) => n.id !== notification.id))
+            }
           />
         ))}
       </div>
