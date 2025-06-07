@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { useStore } from '@src/store/useStore';
-import { useLocalStorageSync } from '@src/hooks/localStorageHook';
+import { useDataInitializer } from '@src/hooks/initialDataHook';
 import { useDemoLoader } from '@src/hooks/demoHook';
-import { Header, WelcomeScreen, CreateNewFile, Upload, Overview, Visualize, Expenses, Income, Transactions, Settings, EditData, Footer } from '@src/components';
+import { Header, WelcomeScreen, CreateNewFile, Upload, Overview, Visualize, Expenses, Income, Transactions, Settings, EditData, NotificationGlobal, Footer } from '@src/components';
 import ProtectedRoutes from '@src/common/ProtectedRoutes';
 
 import './App.scss';
@@ -31,6 +31,7 @@ const PrivateRoutes: React.FC = () => {
             </Route>
             <Route path="*" element={<Navigate to="/overview" replace />} />
           </Routes>
+          <NotificationGlobal />
         </div>
       </CSSTransition>
     </TransitionGroup>
@@ -49,10 +50,9 @@ const PublicRoutes: React.FC = () => (
 
 const App: React.FC = () => {
   const { data } = useStore();
-  const [isLoaded, setIsLoaded] = React.useState(false);
   const { isDemoReady } = useDemoLoader();
 
-  useLocalStorageSync(setIsLoaded);
+  const isLoaded = useDataInitializer();
 
   if (!isLoaded || !isDemoReady) return null;
 

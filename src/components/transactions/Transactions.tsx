@@ -11,7 +11,7 @@ import ReactPaginate from 'react-paginate';
 import './Transactions.scss';
 
 const Transactions: React.FC = () => {
-  const { data, setData, setIsModified } = useStore();
+  const { data, setData, setIsModified, syncToApi } = useStore();
   const [editTransaction, setEditTransaction] = useState<Transaction | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
@@ -45,13 +45,14 @@ const Transactions: React.FC = () => {
     setIsDialogOpen(true);
   };
 
-  const handleSaveTransaction = (updatedTransaction: Transaction) => {
+  const handleSaveTransaction = async(updatedTransaction: Transaction) => {
     try {
       const updatedData = updateTransaction(data, updatedTransaction, data.saveInBrowser);
       setData(updatedData);
       setIsModified(true);
       setIsDialogOpen(false);
       setEditTransaction(null);
+      await syncToApi();
     } catch (error) {
       console.error('Failed to save transaction:', error);
     }
@@ -61,13 +62,14 @@ const Transactions: React.FC = () => {
     setConfirmDeleteId(id);
   };
 
-  const handleDeleteTransaction = () => {
+  const handleDeleteTransaction = async() => {
     if (confirmDeleteId) {
       try {
         const updatedData = deleteTransaction(data, confirmDeleteId, data.saveInBrowser);
         setData(updatedData);
         setIsModified(true);
         setConfirmDeleteId(null);
+        await syncToApi();
       } catch (error) {
         console.error('Failed to delete transaction:', error);
       }

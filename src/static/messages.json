@@ -93,7 +93,7 @@
     "amountPlaceholder": "Amount"
   },
   "editData": {
-    "title": "Edit raw data"
+    "title": "Data"
   },
   "categories": [
     "Rent",
@@ -121,5 +121,13 @@
     "invalidCategories": "Please provide at least one valid category",
     "createFileFailed": "Failed to create new file",
     "saveFailed": "saveFailed"
+  },
+  "readApi": {
+    "success": "Successfuly loaded data from api.",
+    "failed": "Failed to load data from api"
+  },
+  "writeApi": {
+    "success": "Successfuly wrote data to api.",
+    "failed": "Failed to write data to api"
   }
 }

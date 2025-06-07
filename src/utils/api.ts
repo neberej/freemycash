@@ -1,6 +1,6 @@
-// util/api.ts
 
-export async function getData<TResponse>(url: string): Promise<TResponse> {
+export async function getData<TResponse>(url: string | undefined): Promise<TResponse> {
+  if (!url) throw new Error(`URL missing!`);
   const response = await fetch(url, {
     method: 'GET',
     headers: {
@@ -16,9 +16,10 @@ export async function getData<TResponse>(url: string): Promise<TResponse> {
 }
 
 export async function postData<TBody, TResponse>(
-  url: string,
+  url: string | undefined,
   body: TBody
 ): Promise<TResponse> {
+  if (!url) throw new Error(`URL missing!`);
   const response = await fetch(url, {
     method: 'POST',
     headers: {
