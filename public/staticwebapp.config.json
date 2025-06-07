@@ -1,28 +1,11 @@
 {
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/assets/*", "/static/*", "/404.html"]
+  },
   "routes": [
     {
-      "route": "/overview",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/expenses",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/income",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/visualize",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/data",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/*",
-      "statusCode": 404,
+      "route": "/404",
       "serve": "/404.html"
     }
   ]
