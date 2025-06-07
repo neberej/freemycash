@@ -31,7 +31,7 @@ const Savings: React.FC = () => {
   if (!data || data.transactions.length === 0) return noData();
 
   const { labels: rawLabels, savings: rawSavings } = calculateMonthlySavings(data.transactions, data.currency);
-  const labels = rawLabels.slice(0, -1);
+  const labels = rawLabels.slice(0, -1); // exclude current month
   const savings = rawSavings.slice(0, -1);
 
   const monthlyData = data.transactions.reduce((acc, transaction) => {
@@ -49,19 +49,21 @@ const Savings: React.FC = () => {
       {
         label: 'Monthly Savings',
         data: savings,
-        borderColor: '#1E90FF',
-        borderWidth: 2,
-        pointRadius: 5,
-        pointHoverRadius: 7,
-        pointBackgroundColor: '#1E90FF',
-        fill: false,
+        borderColor: '#00659f',
+        backgroundColor: '#00659f',
+        pointBackgroundColor: '#00659f',
+        pointRadius: 4,
+        pointHoverRadius: 5,
         tension: 0.3,
+        borderWidth: 2,
+        fill: false,
       },
     ],
   };
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: { display: false },
       title: { display: false },
@@ -114,19 +116,27 @@ const Savings: React.FC = () => {
     },
     scales: {
       x: {
-        display: true,
-        grid: { display: false },
+        grid: {
+          display: true,
+          borderDash: [2, 2], // dotted
+          color: '#ccc',
+        },
         ticks: {
           color: '#333',
           maxTicksLimit: 6,
+          padding: 8,
         },
+        border: { display: false },
       },
       y: {
-        type: 'linear' as const,
-        grid: { display: false },
-        min: 1000,
+        beginAtZero: true,
+        grid: {
+          display: true,
+          borderDash: [2, 2],
+          color: '#ccc',
+        },
         ticks: {
-          stepSize: 1000,
+          padding: 8,
           callback: function (tickValue: string | number) {
             return formatCurrency(
               typeof tickValue === 'number' ? tickValue : parseFloat(tickValue),
@@ -134,6 +144,7 @@ const Savings: React.FC = () => {
             );
           },
         },
+        border: { display: false },
       },
     },
   };
@@ -165,12 +176,14 @@ const Savings: React.FC = () => {
   }, []);
 
   return (
-    <div className="savings">
+    <>
       <h3 className="text-align-left">{messages.overview.savings}</h3>
-      <div className="savings-chart">
-        <Line ref={chartRef} data={chartData} options={options} />
+      <div className="savings">
+        <div className="savings-chart">
+          <Line ref={chartRef} data={chartData} options={options} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

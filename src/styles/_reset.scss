@@ -16,6 +16,10 @@ body {
   color: $text-primary;
   background-color: $background-color;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-variant-ligatures: none;
+    text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3 {

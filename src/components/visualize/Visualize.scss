@@ -11,17 +11,14 @@
     position: relative;
   }
   .chart-wrapper {
-    padding: 20px;
     background-color: #ffffff;
-    border-radius: 12px;
     max-width: 800px;
     margin: 0 auto;
     .chart-heading {
       font-size: 20px;
-      font-weight: 600;
+      font-weight: 500;
       color: #1a1a1a;
       margin: 0 0 20px 0;
-      text-align: center;
     }
 
     .controls {
@@ -38,9 +35,8 @@
     }
 
     .dropdown {
-      padding: 6px 25px;
-      font-size: 13px;
-      font-weight: 500;
+      padding: 0.2rem 0.50rem;
+      font-size: 0.90rem;
       color: #333;
       background-color: #f9f9f9;
       border: 1px solid #ccc;

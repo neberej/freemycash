@@ -69,7 +69,7 @@ describe('EditTransaction', () => {
 
   expect(await screen.findByText('Merchant required')).toBeInTheDocument();
   expect(screen.getByText('Amount must be positive')).toBeInTheDocument();
-  expect(screen.getByText('Category required')).toBeInTheDocument(); // ✅ Now should work
+  expect(screen.getByText('Category required')).toBeInTheDocument();
 });
 
 

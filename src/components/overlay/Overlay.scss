@@ -43,17 +43,12 @@
   }
 
   .button {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 20px;
-    background-color: $primary !important;
-    color: #fff !important;
     width: 120px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    min-width: unset;
     &.close {
+      margin-top: 20px;
       position: absolute;
       top: 0rem;
       right: 1rem;

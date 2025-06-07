@@ -23,23 +23,10 @@
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1.5rem;
-
-    .button {
-      padding: 0.5rem 1rem;
-      font-size: 0.95rem;
-      background-color: $primary;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-
-      &:hover {
-        background-color: color.adjust($primary, $lightness: -5%);
-      }
-    }
   }
-
+  label, select {
+    margin-bottom: 0.5rem;
+  }
   .table {
     width: 100%;
     border-collapse: collapse;
@@ -88,10 +75,11 @@
               padding: 0.35rem 0.75rem;
               font-size: 0.85rem;
               background-color: $surface;
-              border: 1px solid rgba($border, 0.2);
+              border: 1px solid rgba($border, 0.5);
               border-radius: 5px;
-              color: $text-primary;
+              color: #333;
               transition: background-color 0.2s;
+              font-weight: 400;
 
               &:hover {
                 background-color: rgba($primary, 0.1);

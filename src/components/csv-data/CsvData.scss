@@ -9,6 +9,9 @@
     display: block;
     margin: 1rem 0;
   }
+  input[type=file]::file-selector-button {
+    
+  }
   .error {
     color: red;
     font-weight: bold;

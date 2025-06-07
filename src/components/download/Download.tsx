@@ -38,7 +38,7 @@ const Download: React.FC = () => {
 
   return (
     <>
-      <button className="button" onClick={handleDownload} disabled={!data}>
+      <button className="button transparent" onClick={handleDownload} disabled={!data}>
         <FiDownload/>
         <span className="visually-hidden">{messages.header.download}</span>
       </button>

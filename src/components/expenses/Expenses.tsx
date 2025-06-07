@@ -63,7 +63,10 @@ const Expenses: React.FC = () => {
 
   return (
     <div className="container expenses">
-      <h2>{messages.expenses.title}</h2>
+      <h3>{messages.expenses.title}</h3>
+      <label htmlFor="month-select" className="dropdown-label">
+        Select Month:
+      </label>
       <select
         className="dropdown"
         value={selectedMonth}
@@ -84,6 +87,7 @@ const Expenses: React.FC = () => {
       ) : (
         <div className="expenses-content">
           <div className="category-jump-links">
+            <p className="jump-label">Jump to a category:</p>
             {filteredExpenses.map(({ category }) => (
               <button
                 key={category}
@@ -101,7 +105,7 @@ const Expenses: React.FC = () => {
                 className="category-group"
                 ref={(el) => (categoryRefs.current[category] = el)}
               >
-                <h3>{category}</h3>
+                <h4>{category}</h4>
                 {transactions.map((t) => (
                   <div key={t.id || `${t.date}-${t.amount}-${t.merchant}`} className="transaction-item">
                     <span>{formatDate(t.date)}</span>

@@ -17,8 +17,8 @@
   .dropdown {
     width: 100%;
     max-width: 240px;
-    padding: 0.6rem 0.75rem;
-    font-size: 1rem;
+    padding: 0.3rem 0.50rem;
+    font-size: 0.95rem;
     background-color: $surfaceAlt;
     color: $text;
     border: none;
@@ -42,7 +42,10 @@
 
   .category-group {
     margin-bottom: 2rem;
-
+    h4 {
+      color: #66605c;
+      font-weight: 600;
+    }
     .transaction-item {
       display: flex;
       justify-content: space-between;
@@ -71,7 +74,7 @@
         &:nth-child(3) {
           flex: 1;
           text-align: right;
-          font-weight: 600;
+          font-weight: 400;
           color: $text-primary;
         }
       }
@@ -80,27 +83,39 @@
     .category-total {
       text-align: right;
       margin-top: 0.75rem;
-      font-weight: bold;
+      font-weight: 500;
       font-size: 1rem;
-      color: $text-primary;
+      letter-spacing: 0.03em;
     }
   }
   .category-jump-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
+    margin: 5px 20px 5px 0;
+    display: block;
+    .jump-label {
+      font-size: 0.8rem;
+      display: block;
+      margin-bottom: 10px;;
     }
+  }
   .category-jump-link {
-    background-color: #f0f0f0;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+    background-color: #b9cdcb;
     border: none;
-    padding: 8px 16px;
+    border-radius: 6px;
     cursor: pointer;
-    border-radius: 4px;
-    text-transform: capitalize;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 5px;
   }
 
   .category-jump-link:hover {
     background-color: #e0e0e0;
+  }
+  .expenses-list {
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
   }
 }

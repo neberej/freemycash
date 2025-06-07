@@ -181,7 +181,7 @@ const TrendLineChart: React.FC<Props> = ({ transactions, currency, hideLegend })
 
   return (
     <div className="chart-wrapper trend-chart">
-      <h3 className="chart-heading">Trend Over Time</h3>
+      <h3 className="chart-heading">Trend over time</h3>
       {categories.length > 0 && (
         <div className="controls">
           <label htmlFor="category-select" className="dropdown-label">

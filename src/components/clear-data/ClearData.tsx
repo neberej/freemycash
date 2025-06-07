@@ -27,7 +27,7 @@ const ClearData: React.FC = () => {
 
   return (
     <>
-      <button className="button"  disabled={!data} onClick={() => setShowClearDialog(true)}><FiTrash2/><span className="visually-hidden">{messages.header.clear}</span></button>
+      <button className="button transparent"  disabled={!data} onClick={() => setShowClearDialog(true)}><FiTrash2/><span className="visually-hidden">{messages.header.clear}</span></button>
       <Overlay isOpen={showClearDialog} onClose={() => setShowClearDialog(false)}>
         <h2>{messages.clearDialog.title}</h2>
         <p>{messages.clearDialog.message}</p>

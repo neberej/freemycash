@@ -52,7 +52,10 @@ const Income: React.FC = () => {
 
   return (
     <div className="income container">
-      <h2>{messages.income.title}</h2>
+      <h3>{messages.income.title}</h3>
+      <label htmlFor="month-select" className="dropdown-label">
+        Select Month:
+      </label>
       <select
         className="dropdown"
         value={selectedMonth}
@@ -90,7 +93,7 @@ const Income: React.FC = () => {
                 className="category-group"
                 ref={(el) => (categoryRefs.current[category] = el)}
               >
-                <h3>{category}</h3>
+                <h4>{category}</h4>
                 {transactions.map((t) => (
                   <div key={t.id || `${t.date}-${t.amount}-${t.merchant}`} className="transaction-item">
                     <span>{formatDate(t.date)}</span>

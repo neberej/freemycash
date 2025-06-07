@@ -91,7 +91,7 @@ const Transactions: React.FC = () => {
 
   return (
     <div className="container transactions">
-      <h2>{messages.transactions.title}</h2>
+      <h3>{messages.transactions.title}</h3>
       <div className="container-inner transaction-actions">
         <button className="button" onClick={() => handleAddTransaction('expense')}>
           {messages.transactions.addExpense}
