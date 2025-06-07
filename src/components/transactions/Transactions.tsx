@@ -19,8 +19,14 @@ const Transactions: React.FC = () => {
 
   const itemsPerPage = 10;
   const offset = currentPage * itemsPerPage;
-  const currentTransactions = data?.transactions.slice(offset, offset + itemsPerPage) || [];
-  const pageCount = data ? Math.ceil(data.transactions.length / itemsPerPage) : 0;
+  const sortedTransactions = React.useMemo(() => {
+    if (!data) return [];
+    return [...data.transactions].sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+  }, [data]);
+  const currentTransactions = sortedTransactions.slice(offset, offset + itemsPerPage);
+  const pageCount = data ? Math.ceil(sortedTransactions.length / itemsPerPage) : 0;
 
   const handlePageClick = ({ selected }: { selected: number }) => {
     setCurrentPage(selected);

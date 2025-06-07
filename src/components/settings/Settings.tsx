@@ -65,7 +65,7 @@ const Settings: React.FC = () => {
         </div>
         <div className="settings-option">
           <label>
-            {messages.settings.backendGet}
+            {messages.settings.backendApi}
             <input
               className="input2"
               type="text"
@@ -77,7 +77,6 @@ const Settings: React.FC = () => {
         </div>
         <div className="settings-option">
           <label>
-            {messages.settings.backendPost}
             <input
               className="input2"
               type="text"

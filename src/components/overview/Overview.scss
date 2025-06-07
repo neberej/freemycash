@@ -76,9 +76,18 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); // Explicitly set to 3 columns
     gap: 1.5rem;
+    @media (max-width: 780px) {
+      .overview-card {
+        padding: 20px;
+        .amount {
+          font-size: 22px;
+        }
+      }
+    }
     @media (max-width: 600px) {
       grid-template-columns: repeat(2, 1fr);
       grid-auto-flow: dense; 
+      gap: 1rem;
     }
     @media (max-width: 400px) {
       grid-template-columns: 1fr;

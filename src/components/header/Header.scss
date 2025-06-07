@@ -130,3 +130,18 @@
     }
   }
 }
+@media (max-width: 400px) {
+  .header {
+    padding: 0.5rem 1rem;
+    .header-actions {
+      a, .button > span {
+        font-size: 12px;
+      }
+      a svg, button svg {
+        width: 0.9rem;
+        height: 0.9rem;
+      }
+    }
+  }
+}
+
