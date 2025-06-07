@@ -8,12 +8,12 @@
   },
   "WelcomeScreen": {
     "title": "Welcome!",
-    "message": "Please upload a JSON file or create a new one to start.",
+    "message": "Please upload a compatible financial file or create a new one to start.",
     "upload": "Upload File",
     "createNew": "Create New"
   },
   "createNewFile": {
-    "title": "Create New Financial File",
+    "title": "Create a new financial file",
     "create": "Create File",
     "success": "New financial file created successfully"
   },
@@ -35,8 +35,8 @@
     "saveInBrowserTooltip": "Warning: Anyone with access to this browser will be able to access your data.",
     "prefixTooltip": "When you download your data, the filename will have date on it.",
     "prefixDate": "Prefix filename with date",
-    "categories": "Categories for expenses",
-    "backendApi": "(For self-hosting) Backend API details:",
+    "categories": "Categories",
+    "backendApi": "Backend API details (for self-hosting):",
     "savedWithStorageCleared": "Settings saved and local storage cleared"
   },
   "overview": {

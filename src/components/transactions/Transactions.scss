@@ -66,6 +66,7 @@
 
         td {
           color: $text-primary;
+          height: 50px;
 
           &:last-child {
             display: flex;
@@ -80,7 +81,7 @@
               color: #333;
               transition: background-color 0.2s;
               font-weight: 400;
-
+              min-width: unset;
               &:hover {
                 background-color: rgba($primary, 0.1);
               }

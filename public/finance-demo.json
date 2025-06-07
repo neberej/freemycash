@@ -1,6 +1,14 @@
 {
   "transactions": [
     {
+      "id": "t-1749269896685-2",
+      "type": "income",
+      "date": "2025-06-06",
+      "category": "Earnings",
+      "merchant": "Stock sale",
+      "amount": 2800
+    },
+    {
       "id": "t-1749269896684",
       "type": "expense",
       "date": "2025-06-06",

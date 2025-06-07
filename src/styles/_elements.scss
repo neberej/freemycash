@@ -14,7 +14,7 @@ $button-font: 15px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 15px;
+  padding: 11px 16px;
   font-family: $font-family;
   font-size: $button-font;
   line-height: $button-font;
@@ -26,7 +26,7 @@ $button-font: 15px;
   cursor: pointer;
   transition: $transition;
   margin-right: $spacing-unit;
-  min-width: 100px;
+  min-width: 120px;
   letter-spacing: 0.1px;
   &:hover, &:focus {
     outline: none;
@@ -127,7 +127,7 @@ input[type="file"] {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: $border-radius;
-    background-color: $primary;
+    background-color: $button-bg;
     color: #fff;
     cursor: pointer;
     transition: background-color $transition, transform $transition;
@@ -207,7 +207,7 @@ label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
   cursor: pointer;
 }
 

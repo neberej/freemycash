@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import messages from '@src/static/messages.json';
 import ClearData from '@src/components/clear-data/ClearData';
 import Download from '@src/components/download/Download';
@@ -15,22 +15,22 @@ const Header: React.FC<HeaderProps> = () => {
   const { data, isDemo } = useStore();
   return (
     <header className="header">
-      <Link className="tab logo" to={data ? '/overview' : '/'}>
+      <NavLink className="tab logo" to={data ? '/overview' : '/'}>
         <span className={`logo-bill ${isDemo && 'demo'}`}></span>
-      </Link>
+      </NavLink>
       {data && <nav>
-        <Link className="tab" to="/overview">{messages.overview.title}</Link>
-        <Link className="tab" to="/expenses">{messages.expenses.title}</Link>
-        <Link className="tab" to="/income">{messages.income.title}</Link>
-        <Link className="tab" to="/transactions">{messages.transactions.title}</Link>
-        <Link className="tab" to="/visualize">{messages.visualize.title}</Link>
-        <Link className="tab" to="/data">{messages.editData.title}</Link>
+        <NavLink className="tab" to="/overview">{messages.overview.title}</NavLink>
+        <NavLink className="tab" to="/expenses">{messages.expenses.title}</NavLink>
+        <NavLink className="tab" to="/income">{messages.income.title}</NavLink>
+        <NavLink className="tab" to="/transactions">{messages.transactions.title}</NavLink>
+        <NavLink className="tab" to="/visualize">{messages.visualize.title}</NavLink>
+        <NavLink className="tab" to="/data">{messages.editData.title}</NavLink>
       </nav>}
       {data && <div className="header-actions">
-        <Link className="button" to="/settings">
+        <NavLink className="button" to="/settings">
           <FiSettings />
           <span className="visually-hidden">{messages.settings.title}</span>
-        </Link>
+        </NavLink>
         <Download />
         <ClearData />
       </div>}

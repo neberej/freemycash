@@ -7,6 +7,7 @@
 .welcome-screen {
   @include flex-center(column);
   padding: $spacing-unit * 2;
+  letter-spacing: 0.1px;
   min-height: 70vh;
 
   h2 {
@@ -34,10 +35,13 @@
     font-weight: bold;
     background: 0;
     a {
-      text-decoration: underline;
-      color: teal;
+      text-decoration: none;
+      color: rgb(25, 103, 210);
       font-weight: bold;
       letter-spacing: 0.07em;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }

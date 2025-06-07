@@ -75,17 +75,6 @@ const Income: React.FC = () => {
         </div>
       ) : (
         <div className="income-content">
-          {filteredIncome.length > 1 && <div className="category-jump-links">
-            {filteredIncome.map(({ category }) => (
-              <button
-                key={category}
-                className="category-jump-link"
-                onClick={() => handleCategoryJump(category)}
-              >
-                {category}
-              </button>
-            ))}
-          </div>}
           <div className="income-list">
             {filteredIncome.map(({ category, transactions, total }) => (
               <div

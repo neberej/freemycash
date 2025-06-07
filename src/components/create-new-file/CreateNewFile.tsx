@@ -63,7 +63,7 @@ const CreateNewFile: React.FC = () => {
 
   return (
     <div className="container create-new-file">
-      <h2>{messages.createNewFile.title}</h2>
+      <h3>{messages.createNewFile.title}</h3>
       <div className="container-inner createnew">
         <div className="form-option">
           <label>
@@ -73,7 +73,7 @@ const CreateNewFile: React.FC = () => {
               onChange={(e) => setFormData({ ...formData, saveInBrowser: e.target.checked })}
             />
             {messages.settings.saveInBrowser}
-            <Tooltip tooltip={messages.settings.saveInBrowserTooltip} className="form-tooltips" />
+            <Tooltip tooltip={messages.settings.saveInBrowserTooltip} className="form-tooltips warning" />
           </label>
         </div>
         <div className="form-option">
@@ -99,7 +99,8 @@ const CreateNewFile: React.FC = () => {
             />
           </label>
         </div>
-        <button className="button2" onClick={handleSave}>
+        <p className="modify-later">Note: You can change these settings at any time.</p>
+        <button className="button" onClick={handleSave}>
           {messages.createNewFile.create}
         </button>
         {notifications.map((notification) => (

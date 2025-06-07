@@ -50,7 +50,7 @@ const Settings: React.FC = () => {
 
   return (
     <div className="container settings">
-      <h2>{messages.settings.title}</h2>
+      <h3>{messages.settings.title}</h3>
       <div className="container-inner">
         <div className="settings-option">
           <label>

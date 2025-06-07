@@ -4,7 +4,19 @@
 @use 'sass:color';
 
 .create-new-file {
+  .warning .tooltip-icon {
+    color: red;
+  }
   .form-option {
    flex-basis: 100%;
+  }
+  .modify-later {
+    display: block;
+    font-size: 12px;
+    width: 100%;
+  }
+  .input2 {
+    font-size: 0.9rem;
+    background: #fff;
   }
 }

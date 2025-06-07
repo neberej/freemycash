@@ -60,7 +60,7 @@ const WelcomeScreen: React.FC = () => {
         />
         <button className="button" onClick={() => navigate('/create-new')}>{messages.WelcomeScreen.createNew}</button>
       </div>
-      <p className="demo-link"><a href='?demo=true'>See the demo</a></p>
+      <p className="demo-link"><a href='?demo=true'>See the demo &gt;</a></p>
     </div>
   );
 };

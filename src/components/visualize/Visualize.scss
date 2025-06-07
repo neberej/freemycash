@@ -35,9 +35,11 @@
     }
 
     .dropdown {
-      padding: 0.2rem 0.50rem;
+      padding: 0.2rem 1.8em 0.2em 0.8em;
       font-size: 0.90rem;
       color: #333;
+      min-width: 200px;
+      max-width: 200px;
       background-color: #f9f9f9;
       border: 1px solid #ccc;
       border-radius: 6px;
