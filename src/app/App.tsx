@@ -4,7 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { useStore } from '@src/store/useStore';
 import { useDataInitializer } from '@src/hooks/initialDataHook';
 import { useDemoLoader } from '@src/hooks/demoHook';
-import { Header, WelcomeScreen, CreateNewFile, Upload, Overview, Visualize, Expenses, Income, Transactions, Settings, EditData, NotificationGlobal, Footer } from '@src/components';
+import { Header, WelcomeScreen, CreateNewFile, Upload, Overview, Visualize, Expenses, Income, Transactions, Settings, Data, NotificationGlobal, Footer } from '@src/components';
 import ProtectedRoutes from '@src/common/ProtectedRoutes';
 
 import './App.scss';
@@ -27,7 +27,7 @@ const PrivateRoutes: React.FC = () => {
               <Route path="/transactions" element={<Transactions />} />
               <Route path="/visualize" element={<Visualize />} />
               <Route path="/settings" element={<Settings />} />
-              <Route path="/data" element={<EditData />} />
+              <Route path="/data" element={<Data />} />
             </Route>
             <Route path="*" element={<Navigate to="/overview" replace />} />
           </Routes>

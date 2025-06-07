@@ -4,17 +4,20 @@
 @use 'sass:math';
 
 
-.edit-data {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: $surface;
-  border-radius: 1rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  font-family: 'Inter', sans-serif;
-  h3 {
-    text-align: left;
+.edit-container {
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+  padding: 20px 0;
+  button {
+    margin-top: 15px;
+    text-transform: none;
   }
+}
+// Overlay
+.edit-raw-data {
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
   textarea {
     width: 100%;
     padding: 1rem;
@@ -36,21 +39,7 @@
       box-shadow: 0 0 0 3px color.adjust($primary, $alpha: -0.8);
     }
   }
-
-  .button {
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    background-color: $primary;
-    color: #fff;
-    border: none;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: color.adjust($primary, $lightness: -5%);
-    }
+  h3 {
+    text-align: left;
   }
 }

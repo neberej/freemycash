@@ -1,9 +1,12 @@
+import { DateTime } from 'luxon';
 import { FinancialData, Transaction } from '@src/types';
 import { getCurrentDateISO } from '@src/utils/dateAndTime';
 
 // Generates a unique transaction ID
 export const generateTransactionId = (): string => {
-  return `t-${Date.now()}`;
+  const timestamp = DateTime.now().toMillis(); // e.g. 1717799811350
+  const suffix = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+  return `t-${timestamp}-${suffix}`;
 };
 
 // Creates a new transaction with default values

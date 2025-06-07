@@ -1,0 +1,11 @@
+{
+  "Fees": ["fee", "charge"],
+  "Transfers": ["payment", "zelle", "venmo", "transfer"],
+  "Shopping": ["amazon", "store", "shop"],
+  "Groceries": ["grocery", "supermarket"],
+  "Dining": ["restaurant", "food", "dining", "grill"],
+  "Transport": ["uber", "lyft", "taxi"],
+  "Auto": ["gas", "fuel", "shell"],
+  "Housing": ["rent", "mortgage"],
+  "Subscriptions": ["netflix", "spotify", "hulu", "subscription"]
+}

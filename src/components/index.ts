@@ -11,5 +11,5 @@ export { default as EditData } from './edit-data/EditData';
 export { default as Visualize } from './visualize/Visualize';
 export { default as Footer } from './footer/Footer';
 export { default as NotificationGlobal } from './notification/NotificationGlobal'
-
-
+export { default as Data } from './data/Data'
+export { default as CsvData } from './csv-data/CsvData'

@@ -93,7 +93,22 @@
     "amountPlaceholder": "Amount"
   },
   "editData": {
-    "title": "Data"
+    "title": "Data",
+    "header": "Edit raw data",
+    "overlayTitle": "View/Edit Data",
+    "open": "View/Edit Data",
+    "uploadTitle": "Upload csv",
+    "uploadDesc": "Upload and parse statement data (usually from a bank).",
+    "editTitle": "Edit/View raw data",
+    "editDesc": "See raw json and edit as necessary."
+  },
+  "csvData": {
+    "title": "Upload CSV of transactions (usually from your bank)",
+    "info": "Parse...",
+    "parsedTitle": "Edit parsed transactions",
+    "parsedDesc": "",
+    "save": "Add to Data",
+    "cancel": "Discard"
   },
   "categories": [
     "Rent",

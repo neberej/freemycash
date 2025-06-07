@@ -1,3 +1,4 @@
+import { DateTime } from 'luxon';
 import { generateTransactionId, createNewTransaction, updateTransaction, deleteTransaction } from './transactions';
 import { Transaction, FinancialData } from '../types';
 
@@ -41,23 +42,24 @@ describe('transactions.ts', () => {
   });
 
   describe('generateTransactionId', () => {
-    it('generates a proper transaction ID', () => {
-      const id1 = generateTransactionId();
-      const id2 = generateTransactionId();
-      expect(id1).toMatch(/^t-\d+$/);
+    it('generates a proper transaction ID format', () => {
+      const id = generateTransactionId();
+      expect(id).toMatch(/^t-\d{13}-\d{3}$/); // e.g. t-1717799811350-123
     });
-    it('generates a unique transaction ID', () => {
-      const mockNow = jest.spyOn(Date, 'now');
-      mockNow.mockReturnValueOnce(1000).mockReturnValueOnce(1001);
+
+    it('generates a unique transaction ID (mocked timestamp)', () => {
+      const mockMillis = jest.spyOn(DateTime, 'now').mockImplementation(() => ({
+        toMillis: () => 1234567890123,
+      } as any));
 
       const id1 = generateTransactionId();
       const id2 = generateTransactionId();
 
-      expect(id1).toBe('t-1000');
-      expect(id2).toBe('t-1001');
       expect(id1).not.toEqual(id2);
+      expect(id1).toMatch(/^t-1234567890123-\d{3}$/);
+      expect(id2).toMatch(/^t-1234567890123-\d{3}$/);
 
-      mockNow.mockRestore();
+      mockMillis.mockRestore();
     });
   });
 
@@ -65,7 +67,7 @@ describe('transactions.ts', () => {
     it('creates a new expense transaction', () => {
       const transaction = createNewTransaction('expense', categories);
       expect(transaction).toEqual({
-        id: expect.stringMatching(/^t-\d+$/),
+        id: expect.stringMatching(/^t-\d{13}-\d{3}$/),
         type: 'expense',
         date: '2025-06-01',
         merchant: '',
@@ -77,7 +79,7 @@ describe('transactions.ts', () => {
     it('creates a new income transaction', () => {
       const transaction = createNewTransaction('income', categories);
       expect(transaction).toEqual({
-        id: expect.stringMatching(/^t-\d+$/),
+        id: expect.stringMatching(/^t-\d{13}-\d{3}$/),
         type: 'income',
         date: '2025-06-01',
         merchant: '',

@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useRef } from 'react';
+import React, { useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import { useStore } from '@src/store/useStore';
 import messages from '@src/static/messages.json';
 import { processExpenses, formatDate } from '@src/utils/expenses';
@@ -15,6 +15,17 @@ const Expenses: React.FC = () => {
   );
   const [selectedMonth, setSelectedMonth] = useState<string>(currentMonth);
   const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
+  // Current month may not have data
+  useEffect(() => {
+    const allMonths = new Set(data?.transactions.map(t => t.date.slice(0, 7)));
+    if (!allMonths.has(selectedMonth)) {
+      // Pick current month if available, else pick latest
+      const sorted = Array.from(allMonths).sort((a, b) => b.localeCompare(a));
+      const fallback = sorted.includes(currentMonth) ? currentMonth : sorted[0];
+      if (fallback) setSelectedMonth(fallback);
+    }
+  }, [data?.transactions]);
 
   // Input validation
   if (!data || !data.transactions || !Array.isArray(data.transactions)) {

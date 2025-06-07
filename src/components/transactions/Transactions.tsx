@@ -26,10 +26,13 @@ const Transactions: React.FC = () => {
     const dateDiff = new Date(b.date).getTime() - new Date(a.date).getTime();
     if (dateDiff !== 0) return dateDiff;
 
-      // Secondary: Sort by ID (descending, newer first)
-      return b.id.localeCompare(a.id);
-    });
-  }, [data]);
+    // Compare only the timestamp portion of the ID (before the 2nd hyphen)
+    const aId = a.id.split('-').slice(0, 2).join('-'); // "t-1717799811350"
+    const bId = b.id.split('-').slice(0, 2).join('-');
+
+    return bId.localeCompare(aId); // Newer first
+  });
+}, [data]);
 
   const currentTransactions = sortedTransactions.slice(offset, offset + itemsPerPage);
   const pageCount = data ? Math.ceil(sortedTransactions.length / itemsPerPage) : 0;

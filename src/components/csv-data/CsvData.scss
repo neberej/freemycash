@@ -1,0 +1,67 @@
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use 'sass:color';
+@use 'sass:math';
+
+.csv-upload-container {
+  margin: 0 0 20px 0;
+  input[type="file"] {
+    display: block;
+    margin: 1rem 0;
+  }
+  .error {
+    color: red;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+  .parsed-json {
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: monospace;
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    
+  }
+  .overlay-content {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 500px;
+        th, td {
+          border: 1px solid #ccc;
+          padding: 0.5rem;
+          text-align: left;
+          white-space: nowrap;
+          select {
+            margin-bottom: 0;
+          }
+          input.amount {
+            width: 100px;
+          }
+        }
+      }
+  }
+  .add-data-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    .button {
+      width: 200px;
+      margin: $spacing-unit;
+    }
+  }
+
+}
+

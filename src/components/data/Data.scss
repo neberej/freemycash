@@ -1,0 +1,21 @@
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use 'sass:color';
+@use 'sass:math';
+
+
+.edit-data {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: $surface;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', sans-serif;
+  h4 {
+    font-size: 1.3rem;
+    text-align: left;
+    margin-bottom: 0.8rem;
+  }
+  
+}
