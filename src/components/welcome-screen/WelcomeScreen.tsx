@@ -61,8 +61,8 @@ const staticData = [
   {
     id: 'github',
     title: 'Get involved',
-    desc: 'Found it useful? Star the project or contribute on GitHub.',
-    cta1: 'Star on GitHub',
+    desc: 'Get in touch!',
+    cta1: 'Contact',
   },
 ];
 
@@ -198,7 +198,7 @@ const GithubSection: React.FC<{ data: any }> = ({ data }) => (
   <section className="github section">
     <h2>{data.title}</h2>
     <p>{data.desc}</p>
-    <button className="cta-primary">{data.cta1}</button>
+    <button className="cta-primary" onClick={() => window.location.href = "mailto:mail@freemycash.com"}>{data.cta1}</button>
   </section>
 );
 
