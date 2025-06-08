@@ -12,7 +12,7 @@
   .cta-primary {
     background: #0075d2;
     color: white;
-    padding: 1rem 2rem;
+    padding: 0.7rem 1.3rem;
     border: none;
     border-radius: 6px;
     font-size: 1.125rem;
@@ -65,7 +65,7 @@
       background-size: cover;
     }
     .cta-primary {
-      width: 200px;
+      width: 180px;
     }
     .demo-link {
       margin-top: 20px;
@@ -73,6 +73,8 @@
         color: #666666;
         text-decoration: underline;
         font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 0.8px;
       }
     }
   }
@@ -97,7 +99,7 @@
       margin-bottom: 2rem;
       button {
         background: transparent;
-        border: 2px solid var(--primary);
+        border: 2px solid #ddd;
         padding: 0.75rem 1.5rem;
         border-radius: 4px;
         cursor: pointer;

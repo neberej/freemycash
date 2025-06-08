@@ -60,7 +60,7 @@ const staticData = [
   },
   {
     id: 'github',
-    title: 'Get involved',
+    title: 'Like what you see?',
     desc: 'Get in touch!',
     cta1: 'Contact',
   },
