@@ -46,6 +46,13 @@ const config: Configuration = {
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name][hash][ext][query]',
+        },
+      },
     ],
   },
   optimization: {

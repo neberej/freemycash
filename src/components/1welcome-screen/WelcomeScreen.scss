@@ -1,0 +1,47 @@
+
+@use '@src/styles/variables' as *;
+@use '@src/styles/mixins' as *;
+@use 'sass:color';
+@use 'sass:math';
+
+.welcome-screen {
+  @include flex-center(column);
+  padding: $spacing-unit * 2;
+  letter-spacing: 0.1px;
+  min-height: 70vh;
+
+  h2 {
+    font-size: $font-size-large * 1.5;
+  }
+
+  p {
+    color: $text-secondary;
+    margin-bottom: $spacing-unit * 3;
+  }
+
+  .welcome-actions {
+    @include flex-center;
+    gap: $spacing-unit * 2;
+  }
+
+  @include responsive(mobile) {
+    padding: $spacing-unit * 2;
+  }
+  .demo-link {
+    margin-top: 20px;
+    display: block;
+    font-size: 13px;
+    border: 0;
+    font-weight: bold;
+    background: 0;
+    a {
+      text-decoration: none;
+      color: rgb(25, 103, 210);
+      font-weight: bold;
+      letter-spacing: 0.07em;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

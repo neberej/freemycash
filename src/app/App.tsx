@@ -62,7 +62,7 @@ const App: React.FC = () => {
     <Router>
       <div className="app">
         <Header />
-        <main className='main-content'>
+        <main className='1main-content'>
           {hasData ? <PrivateRoutes /> : <PublicRoutes />}
         </main>
         <Footer />
