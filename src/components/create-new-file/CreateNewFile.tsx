@@ -62,56 +62,58 @@ const CreateNewFile: React.FC = () => {
   };
 
   return (
-    <div className="container create-new-file">
-      <h3>{messages.createNewFile.title}</h3>
-      <div className="container-inner createnew">
-        <div className="form-option">
-          <label>
-            <input
-              type="checkbox"
-              checked={formData.saveInBrowser}
-              onChange={(e) => setFormData({ ...formData, saveInBrowser: e.target.checked })}
+    <main className="main-content">
+      <div className="container create-new-file">
+        <h3>{messages.createNewFile.title}</h3>
+        <div className="container-inner createnew">
+          <div className="form-option">
+            <label>
+              <input
+                type="checkbox"
+                checked={formData.saveInBrowser}
+                onChange={(e) => setFormData({ ...formData, saveInBrowser: e.target.checked })}
+              />
+              {messages.settings.saveInBrowser}
+              <Tooltip tooltip={messages.settings.saveInBrowserTooltip} className="form-tooltips warning" />
+            </label>
+          </div>
+          <div className="form-option">
+            <label>
+              <input
+                type="checkbox"
+                checked={formData.prefixDownload}
+                onChange={(e) => setFormData({ ...formData, prefixDownload: e.target.checked })}
+              />
+              {messages.settings.prefixDate}
+              <Tooltip tooltip={messages.settings.prefixTooltip} className="form-tooltips" />
+            </label>
+          </div>
+          <div className="form-option">
+            <label>
+              {messages.settings.categories}
+              <input
+                className="input2"
+                type="text"
+                value={formData.categories}
+                onChange={(e) => setFormData({ ...formData, categories: e.target.value })}
+                placeholder="Comma-separated categories"
+              />
+            </label>
+          </div>
+          <p className="modify-later">Note: You can change these settings at any time.</p>
+          <button className="button" onClick={handleSave}>
+            {messages.createNewFile.create}
+          </button>
+          {notifications.map((notification) => (
+            <Notification
+              key={notification.id}
+              notification={notification}
+              onClose={() => setNotifications(notifications.filter((n) => n.id !== notification.id))}
             />
-            {messages.settings.saveInBrowser}
-            <Tooltip tooltip={messages.settings.saveInBrowserTooltip} className="form-tooltips warning" />
-          </label>
+          ))}
         </div>
-        <div className="form-option">
-          <label>
-            <input
-              type="checkbox"
-              checked={formData.prefixDownload}
-              onChange={(e) => setFormData({ ...formData, prefixDownload: e.target.checked })}
-            />
-            {messages.settings.prefixDate}
-            <Tooltip tooltip={messages.settings.prefixTooltip} className="form-tooltips" />
-          </label>
-        </div>
-        <div className="form-option">
-          <label>
-            {messages.settings.categories}
-            <input
-              className="input2"
-              type="text"
-              value={formData.categories}
-              onChange={(e) => setFormData({ ...formData, categories: e.target.value })}
-              placeholder="Comma-separated categories"
-            />
-          </label>
-        </div>
-        <p className="modify-later">Note: You can change these settings at any time.</p>
-        <button className="button" onClick={handleSave}>
-          {messages.createNewFile.create}
-        </button>
-        {notifications.map((notification) => (
-          <Notification
-            key={notification.id}
-            notification={notification}
-            onClose={() => setNotifications(notifications.filter((n) => n.id !== notification.id))}
-          />
-        ))}
       </div>
-    </div>
+    </main>
   );
 };
 

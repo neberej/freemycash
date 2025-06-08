@@ -67,28 +67,30 @@ const Upload: React.FC = () => {
   };
 
   return (
-    <div className="container upload">
-      <h2>{messages.header.upload}</h2>
-      <input
-        type="file"
-        accept=".json"
-        ref={fileInputRef}
-        onChange={handleFileSelect}
-      />
-      <Overlay isOpen={showConfirmDialog} onClose={() => setShowConfirmDialog(false)}>
-        <h2>{messages.uploadDialog.title}</h2>
-        <p>{messages.uploadDialog.message}</p>
-        <button className="button" onClick={handleConfirmUpload}>{messages.uploadDialog.confirm}</button>
-        <button className="button" onClick={() => setShowConfirmDialog(false)}>{messages.uploadDialog.cancel}</button>
-      </Overlay>
-      {notifications.map((notification) => (
-        <Notification
-          key={notification.id}
-          notification={notification}
-          onClose={() => setNotifications(notifications.filter((n) => n.id !== notification.id))}
+    <main className="main-content">
+      <div className="container upload">
+        <h2>{messages.header.upload}</h2>
+        <input
+          type="file"
+          accept=".json"
+          ref={fileInputRef}
+          onChange={handleFileSelect}
         />
-      ))}
-    </div>
+        <Overlay isOpen={showConfirmDialog} onClose={() => setShowConfirmDialog(false)}>
+          <h2>{messages.uploadDialog.title}</h2>
+          <p>{messages.uploadDialog.message}</p>
+          <button className="button" onClick={handleConfirmUpload}>{messages.uploadDialog.confirm}</button>
+          <button className="button" onClick={() => setShowConfirmDialog(false)}>{messages.uploadDialog.cancel}</button>
+        </Overlay>
+        {notifications.map((notification) => (
+          <Notification
+            key={notification.id}
+            notification={notification}
+            onClose={() => setNotifications(notifications.filter((n) => n.id !== notification.id))}
+          />
+        ))}
+      </div>
+    </main>
   );
 };
 

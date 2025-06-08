@@ -41,7 +41,6 @@ const PrivateRoutes: React.FC = () => {
 const PublicRoutes: React.FC = () => (
   <Routes>
     <Route path="/" element={<WelcomeScreen />} />
-    <Route path="/app" element={<WelcomeScreen />} />
     <Route path="/create-new" element={<CreateNewFile />} />
     <Route path="/upload" element={<Upload />} />
     <Route path="*" element={<Navigate to="/" replace />} />
@@ -62,9 +61,13 @@ const App: React.FC = () => {
     <Router>
       <div className="app">
         <Header />
-        <main className='main-content'>
-          {hasData ? <PrivateRoutes /> : <PublicRoutes />}
-        </main>
+       {hasData ? (
+          <main className="main-content">
+            <PrivateRoutes />
+          </main>
+          ) : (
+            <PublicRoutes />
+          )}
         <Footer />
       </div>
     </Router>
