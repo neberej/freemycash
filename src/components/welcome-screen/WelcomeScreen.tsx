@@ -5,6 +5,7 @@ import messages from '@src/static/messages.json';
 import { useStore } from '@src/store/useStore';
 import { FinancialData } from '@src/types';
 import hero1 from '@src/assets/hero1.jpg';
+import screen from '@src/assets/screen.png';
 import './WelcomeScreen.scss';
 
 const bgImages = [hero1];
@@ -155,6 +156,7 @@ const FeatureSection: React.FC<{ data: any }> = ({ data }) => (
     <div className="feature-content">
       <h2>{data.title}</h2>
       <p>{data.desc}</p>
+      <img className="screen-img" src={screen}/>
     </div>
     <div className="feature-pattern" />
   </section>
