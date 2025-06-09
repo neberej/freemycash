@@ -70,25 +70,35 @@
     .demo-link {
       margin-top: 20px;
       a {
-        color: #666666;
+        color: #000;
+        //text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
         text-decoration: underline;
         font-weight: 600;
         font-size: 16px;
-        letter-spacing: 0.8px;
       }
+    }
+    h1, p {
+      color: #F0F8FF;
     }
   }
 
   .feature {
     .feature-content {
       max-width: 700px;
+      justify-content: space-between;
       p { font-size: 1.125rem; margin-top: 1rem; }
     }
     .feature-pattern {
-      margin-top: 3rem;
-      width: 100%;
-      height: 100px;
-      //background: url('/assets/feature-dots.svg') center top repeat-x;
+      max-width: 700px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    }
+    .screen-img {
+      max-width: 400px;
+      margin-top: 20px;;
+      border: 2px solid #ddd;
+      margin-bottom: -5rem;
     }
   }
 

@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = () => {
   const { data, isDemo } = useStore();
   return (
     <header className="header">
-      <NavLink className="tab logo" to={data ? '/overview' : '/'}>
+      <NavLink className="tab logo" to={data ? '/overview' : '/'} aria-label={data ? 'Overview' : 'Home'}>
         <span className={`logo-bill ${isDemo && 'demo'}`}></span>
       </NavLink>
       {data && <nav>
