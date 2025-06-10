@@ -1,40 +1,36 @@
+# Free My Cash
 
+A privacy-friendly, backend-optional, single-file-based finance tracker.
 
-# Free my cash
+- [Visit Site](https://fwww.reemycash.com)
 
-A backend-optional, privacy-friendly, single-file based finance tracker.
+---
 
-[Visit site](https://freemycash.com)
+### How It Works
 
+1. **Create or upload** a financial file (JSON).  
+2. **Edit and organize** your data using this tool (via [freemycash.com](https://www.freemycash.com) or your own self-hosted instance).  
+3. **Download** the updated file and take it with you.
 
-### How it works
+**Optional:** Integrate with a backend using a versioned JSON database (e.g., [LowDB](https://github.com/typicode/lowdb)). A reference backend is available in the `/backend` folder.
 
-i) Create or Upload a financial file
-
-ii) Edit, Organize your data on this tool (either freemycash.com or self-host)
-
-iii) Download the updated file and take it with you.
-
-Optional: Integrate with backend using versioned json db (e.g. lowdb). Provided in /backend folder.
+---
 
 ### Installation
 
+```bash
+git clone git@github.com:neberej/freemycash.git
+cd freemycash
+yarn install
 ```
-git checkout git@github.com:neberej/freemycash.git
-yarn add
+
+### Run locally
+
+```bash
+cd freemycash
+yarn dev
 ```
 
-
-## Running frontend (UI)
-
-- Dev server: `yarn dev`
-- Build: `yarn build`
-- Run build: `yarn serve:ui`
-
-
-## Running backend (server)
-
-- Build: `yarn build:server`
-- Run build: `yarn serve:backend`
+----
 
 
