@@ -3,6 +3,9 @@
 A privacy-friendly, backend-optional, single-file-based finance tracker.
 
 - [Visit Site](https://www.freemycash.com)
+- [Demo](https://www.freemycash.com/?demo=true)
+
+
 
 ---
 
