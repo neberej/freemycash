@@ -1,12 +1,15 @@
 {
-  "name": "FreeMyCash.com",
+  "name": "freemycash",
   "version": "0.0.1",
   "description": "Track your finances while owning your data.",
   "keywords": [
     "finance",
-    "track"
+    "track",
+    "expense-tracker",
+    "networth",
+    "expenses"
   ],
-  "author": "",
+  "author": "Nabaraj T (NT)",
   "license": "ISC",
   "scripts": {
     "dev": "webpack serve",

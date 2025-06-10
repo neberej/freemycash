@@ -200,7 +200,7 @@ const GithubSection: React.FC<{ data: any }> = ({ data }) => (
   <section className="github section">
     <h2>{data.title}</h2>
     <p>{data.desc}</p>
-    <button className="cta-primary" onClick={() => window.location.href = "https://github.com/neberej/freemycash"}>{data.cta1}</button>
+    <button className="cta-primary" onClick={() => window.open("https://github.com/neberej/freemycash", "_blank")} > {data.cta1} </button>
   </section>
 );
 
