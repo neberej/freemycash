@@ -54,16 +54,16 @@ const staticData = [
         desc: 'Optional sync via sample backend.',
       },
       {
-        title: 'Mobile App (on the way)',
-        desc: 'Manage finances on the go.',
+        title: 'App',
+        desc: 'Electron app (On the way).',
       },
     ],
   },
   {
     id: 'github',
-    title: 'Like what you see?',
-    desc: 'Get in touch!',
-    cta1: 'Contact',
+    title: 'Feedback/Issues?',
+    desc: 'Report issues or just star on Github!',
+    cta1: 'Github Link',
   },
 ];
 
@@ -200,7 +200,7 @@ const GithubSection: React.FC<{ data: any }> = ({ data }) => (
   <section className="github section">
     <h2>{data.title}</h2>
     <p>{data.desc}</p>
-    <button className="cta-primary" onClick={() => window.location.href = "mailto:mail@freemycash.com"}>{data.cta1}</button>
+    <button className="cta-primary" onClick={() => window.location.href = "https://github.com/neberej/freemycash"}>{data.cta1}</button>
   </section>
 );
 
