@@ -26,6 +26,7 @@
     "kill-port-server": "lsof -iTCP:9000 -sTCP:LISTEN -n -P | grep node | awk '{print $2}' | xargs -r kill -9"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.6",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^29.5.12",
     "@types/lodash": "^4.17.17",
