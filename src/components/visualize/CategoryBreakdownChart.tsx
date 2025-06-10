@@ -109,7 +109,7 @@ const CategoryBreakdownChart: React.FC<Props> = ({
       },
       y: {
         ticks: { font: { size: 14, family: 'Arial' }, color: '#333' },
-        grid: { color: '#e0e0e0' },
+       grid: { display: false },
       },
     },
     onClick: disableInteraction
