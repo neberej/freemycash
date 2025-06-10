@@ -2,7 +2,7 @@
 
 A privacy-friendly, backend-optional, single-file-based finance tracker.
 
-- [Visit Site](https://fwww.reemycash.com)
+- [Visit Site](https://www.freemycash.com)
 
 ---
 
