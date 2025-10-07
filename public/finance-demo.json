@@ -3,7 +3,7 @@
     {
       "id": "t-1749269896685-2",
       "type": "income",
-      "date": "2025-06-06",
+      "date": "2025-10-06",
       "category": "Earnings",
       "merchant": "Stock sale",
       "amount": 2800
@@ -11,7 +11,7 @@
     {
       "id": "t-1749269896684",
       "type": "expense",
-      "date": "2025-06-06",
+      "date": "2025-10-06",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.25
@@ -19,7 +19,7 @@
     {
       "id": "t-1756981234568-2",
       "type": "expense",
-      "date": "2025-06-05",
+      "date": "2025-10-05",
       "category": "Food",
       "merchant": "Chipotle",
       "amount": 22.50
@@ -27,7 +27,7 @@
     {
       "id": "t-1756981234569-3",
       "type": "expense",
-      "date": "2025-06-04",
+      "date": "2025-10-04",
       "category": "Utilities",
       "merchant": "PG&E",
       "amount": 35.80
@@ -35,7 +35,7 @@
     {
       "id": "t-1756981234570-4",
       "type": "expense",
-      "date": "2025-06-03",
+      "date": "2025-10-03",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 45.99
@@ -43,7 +43,7 @@
     {
       "id": "t-1756981234571-5",
       "type": "expense",
-      "date": "2025-06-02",
+      "date": "2025-10-02",
       "category": "Other",
       "merchant": "Uber",
       "amount": 12.75
@@ -51,7 +51,7 @@
     {
       "id": "t-1756981234572-6",
       "type": "expense",
-      "date": "2025-06-01",
+      "date": "2025-10-01",
       "category": "Rent",
       "merchant": "Apartment",
       "amount": 2500
@@ -59,7 +59,7 @@
     {
       "id": "t-1756981234573-7",
       "type": "expense",
-      "date": "2025-05-31",
+      "date": "2025-09-31",
       "category": "Food",
       "merchant": "Trader Joe's",
       "amount": 28.40
@@ -67,7 +67,7 @@
     {
       "id": "t-1756981234574-8",
       "type": "income",
-      "date": "2025-05-30",
+      "date": "2025-09-30",
       "category": "Salary",
       "merchant": "Salary",
       "amount": 3400
@@ -75,7 +75,7 @@
     {
       "id": "t-1756981234575-9",
       "type": "expense",
-      "date": "2025-05-29",
+      "date": "2025-09-29",
       "category": "Clothing",
       "merchant": "Zara",
       "amount": 39.99
@@ -83,7 +83,7 @@
     {
       "id": "t-1756981234576-10",
       "type": "expense",
-      "date": "2025-05-28",
+      "date": "2025-09-28",
       "category": "Food",
       "merchant": "Taco Bell",
       "amount": 8.50
@@ -91,7 +91,7 @@
     {
       "id": "t-1756981234577-11",
       "type": "expense",
-      "date": "2025-05-27",
+      "date": "2025-09-27",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 19.99
@@ -99,7 +99,7 @@
     {
       "id": "t-1756981234578-12",
       "type": "expense",
-      "date": "2025-05-26",
+      "date": "2025-09-26",
       "category": "Other",
       "merchant": "Movie Theater",
       "amount": 15.00
@@ -107,7 +107,7 @@
     {
       "id": "t-1756981234579-13",
       "type": "expense",
-      "date": "2025-05-25",
+      "date": "2025-09-25",
       "category": "Food",
       "merchant": "Whole Foods",
       "amount": 32.10
@@ -115,7 +115,7 @@
     {
       "id": "t-1756981234580-14",
       "type": "expense",
-      "date": "2025-05-24",
+      "date": "2025-09-24",
       "category": "Utilities",
       "merchant": "Comcast",
       "amount": 65.20
@@ -123,7 +123,7 @@
     {
       "id": "t-1756981234581-15",
       "type": "expense",
-      "date": "2025-05-23",
+      "date": "2025-09-23",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 6.10
@@ -131,7 +131,7 @@
     {
       "id": "t-1756981234582-16",
       "type": "expense",
-      "date": "2025-05-22",
+      "date": "2025-09-22",
       "category": "Clothing",
       "merchant": "H&M",
       "amount": 29.95
@@ -139,7 +139,7 @@
     {
       "id": "t-1756981234583-17",
       "type": "expense",
-      "date": "2025-05-21",
+      "date": "2025-09-21",
       "category": "Other",
       "merchant": "Lyft",
       "amount": 14.30
@@ -147,7 +147,7 @@
     {
       "id": "t-1756981234584-18",
       "type": "expense",
-      "date": "2025-05-20",
+      "date": "2025-09-20",
       "category": "Food",
       "merchant": "Panda Express",
       "amount": 11.75
@@ -155,7 +155,7 @@
     {
       "id": "t-1756981234585-19",
       "type": "expense",
-      "date": "2025-05-19",
+      "date": "2025-09-19",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 27.50
@@ -163,7 +163,7 @@
     {
       "id": "t-1756981234586-20",
       "type": "expense",
-      "date": "2025-05-18",
+      "date": "2025-09-18",
       "category": "Food",
       "merchant": "Subway",
       "amount": 9.25
@@ -171,7 +171,7 @@
     {
       "id": "t-1756981234587-21",
       "type": "expense",
-      "date": "2025-05-17",
+      "date": "2025-09-17",
       "category": "Utilities",
       "merchant": "Water Bill",
       "amount": 42.30
@@ -179,7 +179,7 @@
     {
       "id": "t-1756981234588-22",
       "type": "expense",
-      "date": "2025-05-16",
+      "date": "2025-09-16",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.75
@@ -187,7 +187,7 @@
     {
       "id": "t-1756981234589-23",
       "type": "income",
-      "date": "2025-05-15",
+      "date": "2025-09-15",
       "category": "Salary",
       "merchant": "Salary",
       "amount": 3400
@@ -195,7 +195,7 @@
     {
       "id": "t-1756981234590-24",
       "type": "expense",
-      "date": "2025-05-14",
+      "date": "2025-09-14",
       "category": "Other",
       "merchant": "Parking",
       "amount": 7.50
@@ -203,7 +203,7 @@
     {
       "id": "t-1756981234591-25",
       "type": "expense",
-      "date": "2025-05-13",
+      "date": "2025-09-13",
       "category": "Food",
       "merchant": "Safeway",
       "amount": 25.60
@@ -211,7 +211,7 @@
     {
       "id": "t-1756981234592-26",
       "type": "expense",
-      "date": "2025-05-12",
+      "date": "2025-09-12",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 33.45
@@ -219,7 +219,7 @@
     {
       "id": "t-1756981234593-27",
       "type": "expense",
-      "date": "2025-05-11",
+      "date": "2025-09-11",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 4.95
@@ -227,7 +227,7 @@
     {
       "id": "t-1756981234594-28",
       "type": "expense",
-      "date": "2025-05-10",
+      "date": "2025-09-10",
       "category": "Clothing",
       "merchant": "Uniqlo",
       "amount": 49.90
@@ -235,7 +235,7 @@
     {
       "id": "t-1756981234595-29",
       "type": "expense",
-      "date": "2025-05-09",
+      "date": "2025-09-09",
       "category": "Other",
       "merchant": "Bus Fare",
       "amount": 3.25
@@ -243,7 +243,7 @@
     {
       "id": "t-1756981234596-30",
       "type": "expense",
-      "date": "2025-05-08",
+      "date": "2025-09-08",
       "category": "Food",
       "merchant": "In-N-Out",
       "amount": 10.50
@@ -251,7 +251,7 @@
     {
       "id": "t-1756981234597-31",
       "type": "expense",
-      "date": "2025-05-07",
+      "date": "2025-09-07",
       "category": "Utilities",
       "merchant": "PG&E",
       "amount": 38.20
@@ -259,7 +259,7 @@
     {
       "id": "t-1756981234598-32",
       "type": "expense",
-      "date": "2025-05-06",
+      "date": "2025-09-06",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.50
@@ -267,7 +267,7 @@
     {
       "id": "t-1756981234599-33",
       "type": "expense",
-      "date": "2025-05-05",
+      "date": "2025-09-05",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 22.75
@@ -275,7 +275,7 @@
     {
       "id": "t-1756981234600-34",
       "type": "expense",
-      "date": "2025-05-04",
+      "date": "2025-09-04",
       "category": "Other",
       "merchant": "Uber",
       "amount": 13.80
@@ -283,7 +283,7 @@
     {
       "id": "t-1756981234601-35",
       "type": "expense",
-      "date": "2025-05-03",
+      "date": "2025-09-03",
       "category": "Food",
       "merchant": "Whole Foods",
       "amount": 29.30
@@ -291,7 +291,7 @@
     {
       "id": "t-1756981234602-36",
       "type": "expense",
-      "date": "2025-05-02",
+      "date": "2025-09-02",
       "category": "Clothing",
       "merchant": "H&M",
       "amount": 34.99
@@ -299,7 +299,7 @@
     {
       "id": "t-1756981234603-37",
       "type": "expense",
-      "date": "2025-05-01",
+      "date": "2025-09-01",
       "category": "Rent",
       "merchant": "Apartment",
       "amount": 2500
@@ -307,7 +307,7 @@
     {
       "id": "t-1756981234604-38",
       "type": "income",
-      "date": "2025-04-30",
+      "date": "2025-08-30",
       "category": "Salary",
       "merchant": "Salary",
       "amount": 3400
@@ -315,7 +315,7 @@
     {
       "id": "t-1756981234605-39",
       "type": "expense",
-      "date": "2025-04-29",
+      "date": "2025-08-29",
       "category": "Food",
       "merchant": "Trader Joe's",
       "amount": 27.85
@@ -323,7 +323,7 @@
     {
       "id": "t-1756981234606-40",
       "type": "expense",
-      "date": "2025-04-28",
+      "date": "2025-08-28",
       "category": "Utilities",
       "merchant": "Comcast",
       "amount": 62.10
@@ -331,7 +331,7 @@
     {
       "id": "t-1756981234607-41",
       "type": "expense",
-      "date": "2025-04-27",
+      "date": "2025-08-27",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.95
@@ -339,7 +339,7 @@
     {
       "id": "t-1756981234608-42",
       "type": "expense",
-      "date": "2025-04-26",
+      "date": "2025-08-26",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 41.20
@@ -347,7 +347,7 @@
     {
       "id": "t-1756981234609-43",
       "type": "expense",
-      "date": "2025-04-25",
+      "date": "2025-08-25",
       "category": "Other",
       "merchant": "Lyft",
       "amount": 11.90
@@ -355,7 +355,7 @@
     {
       "id": "t-1756981234610-44",
       "type": "expense",
-      "date": "2025-04-24",
+      "date": "2025-08-24",
       "category": "Food",
       "merchant": "Chipotle",
       "amount": 23.45
@@ -363,7 +363,7 @@
     {
       "id": "t-1756981234611-45",
       "type": "expense",
-      "date": "2025-04-23",
+      "date": "2025-08-23",
       "category": "Clothing",
       "merchant": "Zara",
       "amount": 44.95
@@ -371,7 +371,7 @@
     {
       "id": "t-1756981234612-46",
       "type": "expense",
-      "date": "2025-04-22",
+      "date": "2025-08-22",
       "category": "Food",
       "merchant": "Safeway",
       "amount": 26.70
@@ -379,7 +379,7 @@
     {
       "id": "t-1756981234613-47",
       "type": "expense",
-      "date": "2025-04-21",
+      "date": "2025-08-21",
       "category": "Utilities",
       "merchant": "Water Bill",
       "amount": 39.50
@@ -387,7 +387,7 @@
     {
       "id": "t-1756981234614-48",
       "type": "expense",
-      "date": "2025-04-20",
+      "date": "2025-08-20",
       "category": "Other",
       "merchant": "Parking",
       "amount": 8.00
@@ -395,7 +395,7 @@
     {
       "id": "t-1756981234615-49",
       "type": "expense",
-      "date": "2025-04-19",
+      "date": "2025-08-19",
       "category": "Food",
       "merchant": "Subway",
       "amount": 8.90
@@ -403,7 +403,7 @@
     {
       "id": "t-1756981234616-50",
       "type": "expense",
-      "date": "2025-04-18",
+      "date": "2025-08-18",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 30.65
@@ -411,7 +411,7 @@
     {
       "id": "t-1756981234617-51",
       "type": "expense",
-      "date": "2025-04-17",
+      "date": "2025-08-17",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.45
@@ -419,7 +419,7 @@
     {
       "id": "t-1756981234618-52",
       "type": "expense",
-      "date": "2025-04-16",
+      "date": "2025-08-16",
       "category": "Clothing",
       "merchant": "Uniqlo",
       "amount": 39.90
@@ -427,7 +427,7 @@
     {
       "id": "t-1756981234619-53",
       "type": "income",
-      "date": "2025-04-15",
+      "date": "2025-08-15",
       "category": "Salary",
       "merchant": "Salary",
       "amount": 3400
@@ -435,7 +435,7 @@
     {
       "id": "t-1756981234620-54",
       "type": "expense",
-      "date": "2025-04-14",
+      "date": "2025-08-14",
       "category": "Other",
       "merchant": "Bus Fare",
       "amount": 3.50
@@ -443,7 +443,7 @@
     {
       "id": "t-1756981234621-55",
       "type": "expense",
-      "date": "2025-04-13",
+      "date": "2025-08-13",
       "category": "Food",
       "merchant": "In-N-Out",
       "amount": 10.25
@@ -451,7 +451,7 @@
     {
       "id": "t-1756981234622-56",
       "type": "expense",
-      "date": "2025-04-12",
+      "date": "2025-08-12",
       "category": "Utilities",
       "merchant": "PG&E",
       "amount": 36.75
@@ -459,7 +459,7 @@
     {
       "id": "t-1756981234623-57",
       "type": "expense",
-      "date": "2025-04-11",
+      "date": "2025-08-11",
       "category": "Food",
       "merchant": "Whole Foods",
       "amount": 31.20
@@ -467,7 +467,7 @@
     {
       "id": "t-1756981234624-58",
       "type": "expense",
-      "date": "2025-04-10",
+      "date": "2025-08-10",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 25.99
@@ -475,7 +475,7 @@
     {
       "id": "t-1756981234625-59",
       "type": "expense",
-      "date": "2025-04-09",
+      "date": "2025-08-09",
       "category": "Other",
       "merchant": "Uber",
       "amount": 14.50
@@ -483,7 +483,7 @@
     {
       "id": "t-1756981234626-60",
       "type": "expense",
-      "date": "2025-04-08",
+      "date": "2025-08-08",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.65
@@ -491,7 +491,7 @@
     {
       "id": "t-1756981234627-61",
       "type": "expense",
-      "date": "2025-04-07",
+      "date": "2025-08-07",
       "category": "Clothing",
       "merchant": "H&M",
       "amount": 29.99
@@ -499,7 +499,7 @@
     {
       "id": "t-1756981234628-62",
       "type": "expense",
-      "date": "2025-04-06",
+      "date": "2025-08-06",
       "category": "Food",
       "merchant": "Chipotle",
       "amount": 22.80
@@ -507,7 +507,7 @@
     {
       "id": "t-1756981234629-63",
       "type": "expense",
-      "date": "2025-04-05",
+      "date": "2025-08-05",
       "category": "Utilities",
       "merchant": "Comcast",
       "amount": 64.30
@@ -515,7 +515,7 @@
     {
       "id": "t-1756981234630-64",
       "type": "expense",
-      "date": "2025-04-04",
+      "date": "2025-08-04",
       "category": "Food",
       "merchant": "Safeway",
       "amount": 28.50
@@ -523,7 +523,7 @@
     {
       "id": "t-1756981234631-65",
       "type": "expense",
-      "date": "2025-04-03",
+      "date": "2025-08-03",
       "category": "Other",
       "merchant": "Movie Theater",
       "amount": 14.75
@@ -531,7 +531,7 @@
     {
       "id": "t-1756981234632-66",
       "type": "expense",
-      "date": "2025-04-02",
+      "date": "2025-08-02",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 37.45
@@ -539,7 +539,7 @@
     {
       "id": "t-1756981234633-67",
       "type": "expense",
-      "date": "2025-04-01",
+      "date": "2025-08-01",
       "category": "Rent",
       "merchant": "Apartment",
       "amount": 2500
@@ -547,7 +547,7 @@
     {
       "id": "t-1756981234634-68",
       "type": "income",
-      "date": "2025-03-30",
+      "date": "2025-07-30",
       "category": "Salary",
       "merchant": "Salary",
       "amount": 3400
@@ -555,7 +555,7 @@
     {
       "id": "t-1756981234635-69",
       "type": "expense",
-      "date": "2025-03-29",
+      "date": "2025-07-29",
       "category": "Food",
       "merchant": "Trader Joe's",
       "amount": 26.90
@@ -563,7 +563,7 @@
     {
       "id": "t-1756981234636-70",
       "type": "expense",
-      "date": "2025-03-28",
+      "date": "2025-07-28",
       "category": "Clothing",
       "merchant": "Zara",
       "amount": 42.95
@@ -571,7 +571,7 @@
     {
       "id": "t-1756981234637-71",
       "type": "expense",
-      "date": "2025-03-27",
+      "date": "2025-07-27",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.30
@@ -579,7 +579,7 @@
     {
       "id": "t-1756981234638-72",
       "type": "expense",
-      "date": "2025-03-26",
+      "date": "2025-07-26",
       "category": "Utilities",
       "merchant": "Water Bill",
       "amount": 41.20
@@ -587,7 +587,7 @@
     {
       "id": "t-1756981234639-73",
       "type": "expense",
-      "date": "2025-03-25",
+      "date": "2025-07-25",
       "category": "Other",
       "merchant": "Lyft",
       "amount": 13.25
@@ -595,7 +595,7 @@
     {
       "id": "t-1756981234640-74",
       "type": "expense",
-      "date": "2025-03-24",
+      "date": "2025-07-24",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 29.99
@@ -603,7 +603,7 @@
     {
       "id": "t-1756981234641-75",
       "type": "expense",
-      "date": "2025-03-23",
+      "date": "2025-07-23",
       "category": "Food",
       "merchant": "Subway",
       "amount": 9.10
@@ -611,7 +611,7 @@
     {
       "id": "t-1756981234642-76",
       "type": "expense",
-      "date": "2025-03-22",
+      "date": "2025-07-22",
       "category": "Other",
       "merchant": "Bus Fare",
       "amount": 3.25
@@ -619,7 +619,7 @@
     {
       "id": "t-1756981234643-77",
       "type": "expense",
-      "date": "2025-03-21",
+      "date": "2025-07-21",
       "category": "Food",
       "merchant": "In-N-Out",
       "amount": 10.75
@@ -627,7 +627,7 @@
     {
       "id": "t-1756981234644-78",
       "type": "expense",
-      "date": "2025-03-20",
+      "date": "2025-07-20",
       "category": "Clothing",
       "merchant": "Uniqlo",
       "amount": 39.90
@@ -635,7 +635,7 @@
     {
       "id": "t-1756981234645-79",
       "type": "expense",
-      "date": "2025-03-19",
+      "date": "2025-07-19",
       "category": "Food",
       "merchant": "Whole Foods",
       "amount": 30.45
@@ -643,7 +643,7 @@
     {
       "id": "t-1756981234646-80",
       "type": "expense",
-      "date": "2025-03-18",
+      "date": "2025-07-18",
       "category": "Utilities",
       "merchant": "PG&E",
       "amount": 37.50
@@ -651,7 +651,7 @@
     {
       "id": "t-1756981234647-81",
       "type": "expense",
-      "date": "2025-03-17",
+      "date": "2025-07-17",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.85
@@ -659,7 +659,7 @@
     {
       "id": "t-1756981234648-82",
       "type": "expense",
-      "date": "2025-03-16",
+      "date": "2025-07-16",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 34.20
@@ -667,7 +667,7 @@
     {
       "id": "t-1756981234649-83",
       "type": "income",
-      "date": "2025-03-15",
+      "date": "2025-07-15",
       "category": "Salary",
       "merchant": "Salary",
       "amount": 3400
@@ -675,7 +675,7 @@
     {
       "id": "t-1756981234650-84",
       "type": "expense",
-      "date": "2025-03-14",
+      "date": "2025-07-14",
       "category": "Other",
       "merchant": "Parking",
       "amount": 7.75
@@ -683,7 +683,7 @@
     {
       "id": "t-1756981234651-85",
       "type": "expense",
-      "date": "2025-03-13",
+      "date": "2025-07-13",
       "category": "Food",
       "merchant": "Chipotle",
       "amount": 23.10
@@ -691,7 +691,7 @@
     {
       "id": "t-1756981234652-86",
       "type": "expense",
-      "date": "2025-03-12",
+      "date": "2025-07-12",
       "category": "Clothing",
       "merchant": "H&M",
       "amount": 32.99
@@ -699,7 +699,7 @@
     {
       "id": "t-1756981234653-87",
       "type": "expense",
-      "date": "2025-03-11",
+      "date": "2025-07-11",
       "category": "Food",
       "merchant": "Safeway",
       "amount": 27.30
@@ -707,7 +707,7 @@
     {
       "id": "t-1756981234654-88",
       "type": "expense",
-      "date": "2025-03-10",
+      "date": "2025-07-10",
       "category": "Utilities",
       "merchant": "Comcast",
       "amount": 63.45
@@ -715,7 +715,7 @@
     {
       "id": "t-1756981234655-89",
       "type": "expense",
-      "date": "2025-03-09",
+      "date": "2025-07-09",
       "category": "Other",
       "merchant": "Uber",
       "amount": 12.90
@@ -723,7 +723,7 @@
     {
       "id": "t-1756981234656-90",
       "type": "expense",
-      "date": "2025-03-08",
+      "date": "2025-07-08",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.55
@@ -731,7 +731,7 @@
     {
       "id": "t-1756981234657-91",
       "type": "expense",
-      "date": "2025-03-07",
+      "date": "2025-07-07",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 31.75
@@ -739,7 +739,7 @@
     {
       "id": "t-1756981234658-92",
       "type": "expense",
-      "date": "2025-03-06",
+      "date": "2025-07-06",
       "category": "Food",
       "merchant": "Subway",
       "amount": 8.95
@@ -747,7 +747,7 @@
     {
       "id": "t-1756981234659-93",
       "type": "expense",
-      "date": "2025-03-05",
+      "date": "2025-07-05",
       "category": "Clothing",
       "merchant": "Zara",
       "amount": 41.95
@@ -755,7 +755,7 @@
     {
       "id": "t-1756981234660-94",
       "type": "expense",
-      "date": "2025-03-04",
+      "date": "2025-07-04",
       "category": "Other",
       "merchant": "Bus Fare",
       "amount": 3.50
@@ -763,7 +763,7 @@
     {
       "id": "t-1756981234661-95",
       "type": "expense",
-      "date": "2025-03-03",
+      "date": "2025-07-03",
       "category": "Food",
       "merchant": "In-N-Out",
       "amount": 10.50
@@ -771,7 +771,7 @@
     {
       "id": "t-1756981234662-96",
       "type": "expense",
-      "date": "2025-03-02",
+      "date": "2025-07-02",
       "category": "Utilities",
       "merchant": "Water Bill",
       "amount": 40.80
@@ -779,7 +779,7 @@
     {
       "id": "t-1756981234663-97",
       "type": "expense",
-      "date": "2025-03-01",
+      "date": "2025-07-01",
       "category": "Rent",
       "merchant": "Apartment",
       "amount": 2500
@@ -787,7 +787,7 @@
     {
       "id": "t-1756981234664-98",
       "type": "income",
-      "date": "2025-02-28",
+      "date": "2025-06-28",
       "category": "Salary",
       "merchant": "Salary",
       "amount": 3400
@@ -795,7 +795,7 @@
     {
       "id": "t-1756981234665-99",
       "type": "expense",
-      "date": "2025-02-27",
+      "date": "2025-06-27",
       "category": "Food",
       "merchant": "Trader Joe's",
       "amount": 28.20
@@ -803,7 +803,7 @@
     {
       "id": "t-1756981234666-100",
       "type": "expense",
-      "date": "2025-02-26",
+      "date": "2025-06-26",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 33.50
@@ -811,7 +811,7 @@
     {
       "id": "t-1756981234667-101",
       "type": "expense",
-      "date": "2025-02-25",
+      "date": "2025-06-25",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.75
@@ -819,7 +819,7 @@
     {
       "id": "t-1756981234668-102",
       "type": "expense",
-      "date": "2025-02-24",
+      "date": "2025-06-24",
       "category": "Clothing",
       "merchant": "H&M",
       "amount": 34.99
@@ -827,7 +827,7 @@
     {
       "id": "t-1756981234669-103",
       "type": "expense",
-      "date": "2025-02-23",
+      "date": "2025-06-23",
       "category": "Other",
       "merchant": "Lyft",
       "amount": 13.75
@@ -835,7 +835,7 @@
     {
       "id": "t-1756981234670-104",
       "type": "expense",
-      "date": "2025-02-22",
+      "date": "2025-06-22",
       "category": "Food",
       "merchant": "Chipotle",
       "amount": 22.95
@@ -843,7 +843,7 @@
     {
       "id": "t-1756981234671-105",
       "type": "expense",
-      "date": "2025-02-21",
+      "date": "2025-06-21",
       "category": "Utilities",
       "merchant": "PG&E",
       "amount": 38.10
@@ -851,7 +851,7 @@
     {
       "id": "t-1756981234672-106",
       "type": "expense",
-      "date": "2025-02-20",
+      "date": "2025-06-20",
       "category": "Food",
       "merchant": "Safeway",
       "amount": 27.80
@@ -859,7 +859,7 @@
     {
       "id": "t-1756981234673-107",
       "type": "expense",
-      "date": "2025-02-19",
+      "date": "2025-06-19",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 30.25
@@ -867,7 +867,7 @@
     {
       "id": "t-1756981234674-108",
       "type": "expense",
-      "date": "2025-02-18",
+      "date": "2025-06-18",
       "category": "Other",
       "merchant": "Parking",
       "amount": 7.50
@@ -875,7 +875,7 @@
     {
       "id": "t-1756981234675-109",
       "type": "expense",
-      "date": "2025-02-17",
+      "date": "2025-06-17",
       "category": "Food",
       "merchant": "Subway",
       "amount": 9.20
@@ -883,7 +883,7 @@
     {
       "id": "t-1756981234676-110",
       "type": "expense",
-      "date": "2025-02-16",
+      "date": "2025-06-16",
       "category": "Clothing",
       "merchant": "Uniqlo",
       "amount": 39.90
@@ -891,7 +891,7 @@
     {
       "id": "t-1756981234677-111",
       "type": "income",
-      "date": "2025-02-15",
+      "date": "2025-06-15",
       "category": "Salary",
       "merchant": "Salary",
       "amount": 3400
@@ -899,7 +899,7 @@
     {
       "id": "t-1756981234678-112",
       "type": "expense",
-      "date": "2025-02-14",
+      "date": "2025-06-14",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.65
@@ -907,7 +907,7 @@
     {
       "id": "t-1756981234679-113",
       "type": "expense",
-      "date": "2025-02-13",
+      "date": "2025-06-13",
       "category": "Utilities",
       "merchant": "Comcast",
       "amount": 62.90
@@ -915,7 +915,7 @@
     {
       "id": "t-1756981234680-114",
       "type": "expense",
-      "date": "2025-02-12",
+      "date": "2025-06-12",
       "category": "Other",
       "merchant": "Bus Fare",
       "amount": 3.25
@@ -923,7 +923,7 @@
     {
       "id": "t-1756981234681-115",
       "type": "expense",
-      "date": "2025-02-11",
+      "date": "2025-06-11",
       "category": "Food",
       "merchant": "In-N-Out",
       "amount": 10.45
@@ -931,7 +931,7 @@
     {
       "id": "t-1756981234682-116",
       "type": "expense",
-      "date": "2025-02-10",
+      "date": "2025-06-10",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 32.75
@@ -939,7 +939,7 @@
     {
       "id": "t-1756981234683-117",
       "type": "expense",
-      "date": "2025-02-09",
+      "date": "2025-06-09",
       "category": "Food",
       "merchant": "Whole Foods",
       "amount": 29.95
@@ -947,7 +947,7 @@
     {
       "id": "t-1756981234684-118",
       "type": "expense",
-      "date": "2025-02-08",
+      "date": "2025-06-08",
       "category": "Clothing",
       "merchant": "Zara",
       "amount": 43.95
@@ -955,7 +955,7 @@
     {
       "id": "t-1756981234685-119",
       "type": "expense",
-      "date": "2025-02-07",
+      "date": "2025-06-07",
       "category": "Other",
       "merchant": "Uber",
       "amount": 14.25
@@ -963,7 +963,7 @@
     {
       "id": "t-1756981234686-120",
       "type": "expense",
-      "date": "2025-02-06",
+      "date": "2025-06-06",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.50
@@ -971,7 +971,7 @@
     {
       "id": "t-1756981234687-121",
       "type": "expense",
-      "date": "2025-02-05",
+      "date": "2025-06-05",
       "category": "Utilities",
       "merchant": "Water Bill",
       "amount": 41.50
@@ -979,7 +979,7 @@
     {
       "id": "t-1756981234688-122",
       "type": "expense",
-      "date": "2025-02-04",
+      "date": "2025-06-04",
       "category": "Food",
       "merchant": "Chipotle",
       "amount": 23.25
@@ -987,7 +987,7 @@
     {
       "id": "t-1756981234689-123",
       "type": "expense",
-      "date": "2025-02-03",
+      "date": "2025-06-03",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 31.50
@@ -995,7 +995,7 @@
     {
       "id": "t-1756981234690-124",
       "type": "expense",
-      "date": "2025-02-02",
+      "date": "2025-06-02",
       "category": "Other",
       "merchant": "Movie Theater",
       "amount": 15.00
@@ -1003,7 +1003,7 @@
     {
       "id": "t-1756981234691-125",
       "type": "expense",
-      "date": "2025-02-01",
+      "date": "2025-06-01",
       "category": "Rent",
       "merchant": "Apartment",
       "amount": 2500
@@ -1011,7 +1011,7 @@
     {
       "id": "t-1756981234692-126",
       "type": "income",
-      "date": "2025-01-30",
+      "date": "2025-05-30",
       "category": "Salary",
       "merchant": "Salary",
       "amount": 3400
@@ -1019,7 +1019,7 @@
     {
       "id": "t-1756981234693-127",
       "type": "expense",
-      "date": "2025-01-29",
+      "date": "2025-05-29",
       "category": "Food",
       "merchant": "Trader Joe's",
       "amount": 28.75
@@ -1027,7 +1027,7 @@
     {
       "id": "t-1756981234694-128",
       "type": "expense",
-      "date": "2025-01-28",
+      "date": "2025-05-28",
       "category": "Clothing",
       "merchant": "H&M",
       "amount": 34.99
@@ -1035,7 +1035,7 @@
     {
       "id": "t-1756981234695-129",
       "type": "expense",
-      "date": "2025-01-27",
+      "date": "2025-05-27",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.65
@@ -1043,7 +1043,7 @@
     {
       "id": "t-1756981234696-130",
       "type": "expense",
-      "date": "2025-01-26",
+      "date": "2025-05-26",
       "category": "Utilities",
       "merchant": "PG&E",
       "amount": 37.90
@@ -1051,7 +1051,7 @@
     {
       "id": "t-1756981234697-131",
       "type": "expense",
-      "date": "2025-01-25",
+      "date": "2025-05-25",
       "category": "Other",
       "merchant": "Lyft",
       "amount": 13.50
@@ -1059,7 +1059,7 @@
     {
       "id": "t-1756981234698-132",
       "type": "expense",
-      "date": "2025-01-24",
+      "date": "2025-05-24",
       "category": "Food",
       "merchant": "Safeway",
       "amount": 27.95
@@ -1067,7 +1067,7 @@
     {
       "id": "t-1756981234699-133",
       "type": "expense",
-      "date": "2025-01-23",
+      "date": "2025-05-23",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 32.25
@@ -1075,7 +1075,7 @@
     {
       "id": "t-1756981234700-134",
       "type": "expense",
-      "date": "2025-01-22",
+      "date": "2025-05-22",
       "category": "Food",
       "merchant": "Subway",
       "amount": 9.15
@@ -1083,7 +1083,7 @@
     {
       "id": "t-1756981234701-135",
       "type": "expense",
-      "date": "2025-01-21",
+      "date": "2025-05-21",
       "category": "Clothing",
       "merchant": "Uniqlo",
       "amount": 39.90
@@ -1091,7 +1091,7 @@
     {
       "id": "t-1756981234702-136",
       "type": "expense",
-      "date": "2025-01-20",
+      "date": "2025-05-20",
       "category": "Other",
       "merchant": "Parking",
       "amount": 7.75
@@ -1099,7 +1099,7 @@
     {
       "id": "t-1756981234703-137",
       "type": "expense",
-      "date": "2025-01-19",
+      "date": "2025-05-19",
       "category": "Food",
       "merchant": "In-N-Out",
       "amount": 10.60
@@ -1107,7 +1107,7 @@
     {
       "id": "t-1756981234704-138",
       "type": "expense",
-      "date": "2025-01-18",
+      "date": "2025-05-18",
       "category": "Utilities",
       "merchant": "Comcast",
       "amount": 63.20
@@ -1115,7 +1115,7 @@
     {
       "id": "t-1756981234705-139",
       "type": "expense",
-      "date": "2025-01-17",
+      "date": "2025-05-17",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.55
@@ -1123,7 +1123,7 @@
     {
       "id": "t-1756981234706-140",
       "type": "expense",
-      "date": "2025-01-16",
+      "date": "2025-05-16",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 31.99
@@ -1131,7 +1131,7 @@
     {
       "id": "t-1756981234707-141",
       "type": "income",
-      "date": "2025-01-15",
+      "date": "2025-05-15",
       "category": "Salary",
       "merchant": "Salary",
       "amount": 3400
@@ -1139,7 +1139,7 @@
     {
       "id": "t-1756981234708-142",
       "type": "expense",
-      "date": "2025-01-14",
+      "date": "2025-05-14",
       "category": "Other",
       "merchant": "Bus Fare",
       "amount": 3.50
@@ -1147,7 +1147,7 @@
     {
       "id": "t-1756981234709-143",
       "type": "expense",
-      "date": "2025-01-13",
+      "date": "2025-05-13",
       "category": "Food",
       "merchant": "Chipotle",
       "amount": 23.35
@@ -1155,7 +1155,7 @@
     {
       "id": "t-1756981234710-144",
       "type": "expense",
-      "date": "2025-01-12",
+      "date": "2025-05-12",
       "category": "Clothing",
       "merchant": "Zara",
       "amount": 42.95
@@ -1163,7 +1163,7 @@
     {
       "id": "t-1756981234711-145",
       "type": "expense",
-      "date": "2025-01-11",
+      "date": "2025-05-11",
       "category": "Food",
       "merchant": "Whole Foods",
       "amount": 30.25
@@ -1171,7 +1171,7 @@
     {
       "id": "t-1756981234712-146",
       "type": "expense",
-      "date": "2025-01-10",
+      "date": "2025-05-10",
       "category": "Utilities",
       "merchant": "Water Bill",
       "amount": 41.30
@@ -1179,7 +1179,7 @@
     {
       "id": "t-1756981234713-147",
       "type": "expense",
-      "date": "2025-01-09",
+      "date": "2025-05-09",
       "category": "Other",
       "merchant": "Uber",
       "amount": 14.00
@@ -1187,7 +1187,7 @@
     {
       "id": "t-1756981234714-148",
       "type": "expense",
-      "date": "2025-01-08",
+      "date": "2025-05-08",
       "category": "Food",
       "merchant": "Starbucks",
       "amount": 5.75
@@ -1195,7 +1195,7 @@
     {
       "id": "t-1756981234715-149",
       "type": "expense",
-      "date": "2025-01-07",
+      "date": "2025-05-07",
       "category": "Amazon",
       "merchant": "Amazon",
       "amount": 33.75
@@ -1203,7 +1203,7 @@
     {
       "id": "t-1756981234716-150",
       "type": "expense",
-      "date": "2025-01-06",
+      "date": "2025-05-06",
       "category": "Food",
       "merchant": "Safeway",
       "amount": 28.10
@@ -1211,7 +1211,7 @@
     {
       "id": "t-1756981234717-151",
       "type": "expense",
-      "date": "2025-01-05",
+      "date": "2025-05-05",
       "category": "Clothing",
       "merchant": "H&M",
       "amount": 34.99
@@ -1219,7 +1219,7 @@
     {
       "id": "t-1756981234718-152",
       "type": "expense",
-      "date": "2025-01-04",
+      "date": "2025-05-04",
       "category": "Other",
       "merchant": "Movie Theater",
       "amount": 15.00
@@ -1227,7 +1227,7 @@
     {
       "id": "t-1756981234719-153",
       "type": "expense",
-      "date": "2025-01-03",
+      "date": "2025-05-03",
       "category": "Food",
       "merchant": "Subway",
       "amount": 9.10
@@ -1235,7 +1235,7 @@
     {
       "id": "t-1756981234720-154",
       "type": "expense",
-      "date": "2025-01-02",
+      "date": "2025-05-02",
       "category": "Utilities",
       "merchant": "PG&E",
       "amount": 38.50
@@ -1243,7 +1243,7 @@
     {
       "id": "t-1756981234721-155",
       "type": "expense",
-      "date": "2025-01-01",
+      "date": "2025-05-01",
       "category": "Rent",
       "merchant": "Apartment",
       "amount": 2500
@@ -1251,15 +1251,15 @@
   ],
   "netWorth": [
     {
-      "date": "2025-06-01T09:17:06.398Z",
+      "date": "2025-10-01T09:17:06.398Z",
       "amount": 950
     },
     {
-      "date": "2025-05-01T09:17:06.398Z",
+      "date": "2025-09-01T09:17:06.398Z",
       "amount": 800
     },
     {
-      "date": "2025-04-01T09:17:06.398Z",
+      "date": "2025-08-01T09:17:06.398Z",
       "amount": 850
     }
   ],
